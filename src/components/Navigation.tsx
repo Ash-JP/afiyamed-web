@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Navigation() {
     return (
@@ -7,8 +8,13 @@ export function Navigation() {
                 <div className="flex justify-between h-20">
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0 flex items-center">
-                            <span className="text-2xl font-bold text-blue-900 tracking-tight">AL AFIYA</span>
-                            <span className="ml-2 text-sm font-medium text-gray-500 uppercase tracking-widest hidden sm:block">Medical Supplies</span>
+                            <Image
+                                src="/logo.png"
+                                alt="Al Afiya Medical Supplies"
+                                width={170}
+                                height={45}
+                                priority
+                            />
                         </Link>
                     </div>
                     <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
