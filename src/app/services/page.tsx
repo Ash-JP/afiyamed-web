@@ -1,4 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Services",
+    description: "End-to-end supply chain integration, bulk ordering, and custom procurement tailored for healthcare facilities.",
+};
 
 export default function ServicesPage() {
     const services = [

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Careers",
+    description: "Build a rewarding career at Al Afiya Medical Supplies. We are always looking for driven, passionate individuals.",
+};
+
 export default function CareersPage() {
     const jobs = [
         { title: "Medical Sales Executive", location: "Dubai, UAE", type: "Full-Time" },

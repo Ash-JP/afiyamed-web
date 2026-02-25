@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About Us",
+    description: "Learn about Al Afiya Medical Supplies LLC, a trusted medical distributor in the Middle East.",
+};
+
 export default function AboutPage() {
     return (
         <div className="py-16 bg-white min-h-screen">

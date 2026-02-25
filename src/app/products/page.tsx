@@ -1,4 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Products",
+    description: "Browse our comprehensive catalog of clinical equipment, laboratory supplies, and surgical consumables.",
+};
 
 export default function ProductsPage() {
     const categories = [

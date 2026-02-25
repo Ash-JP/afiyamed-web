@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact Us",
+    description: "Get in touch with our team for sales inquiries, custom procurement, or general questions.",
+};
+
 export default function ContactPage() {
     return (
         <div className="py-16 bg-slate-50 min-h-screen">
