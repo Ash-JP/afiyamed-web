@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://alafiyamed.com';
 
     // Add all your static routes here
-    const routes = ['', '/about', '/contact', '/products', '/careers', '/services'].map((route) => ({
+    const routes = ['', '/about', '/contact', '/products', '/services'].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),
         changeFrequency: 'monthly' as const,
