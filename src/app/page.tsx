@@ -12,7 +12,11 @@ import {
   Building2,
   Stethoscope,
   FlaskConical,
-  Pill
+  Pill,
+  Award,
+  Package,
+  BadgeCheck,
+  PhoneCall
 } from "lucide-react";
 
 export default function Home() {
@@ -38,12 +42,6 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-center lg:text-left order-2 lg:order-1"
             >
-              {/* Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-                <span className="w-2 h-2 rounded-full bg-[#A8D8DF] animate-pulse"></span>
-                <span className="text-white/90 text-sm font-medium tracking-wide">Premium Medical Supplies</span>
-              </div>
-
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-[1.15] tracking-tight drop-shadow-lg">
                 A Culture of Caring,<br />A Legacy of Quality
               </h1>
@@ -98,12 +96,9 @@ export default function Home() {
         >
           {/* Section Header */}
           <div className="text-center mb-6">
-            <p className="text-[11px] font-semibold tracking-[3px] uppercase text-[#2A8A9E] mb-3">Trusted Worldwide</p>
-            <h2 className="text-2xl md:text-3xl font-serif text-[#0B3D54] mb-3">Our Partners</h2>
+            <h2 className="text-[22px] font-extrabold tracking-[6px] uppercase text-[#2A8A9E] mb-3">Our Partners</h2>
             <div className="w-16 h-1 bg-gradient-to-r from-[#3AABB8] to-[#1D6375] mx-auto rounded-full"></div>
-            <p className="mt-4 text-[15px] text-[#4A6870] max-w-xl mx-auto font-light">
-              We collaborate with globally recognized healthcare brands to deliver only the highest calibre of medical products.
-            </p>
+            <p className="mt-4 text-[14px] text-[#4A6870] max-w-3xl mx-auto font-light">We collaborate with globally recognized healthcare brands to deliver only the highest calibre of medical products.</p>
           </div>
 
           {/* Infinite Scrolling Carousel — Single Row */}
@@ -138,18 +133,19 @@ export default function Home() {
               ))}
             </div>
           </div>
-          {/* Compact Stats Strip */}
-          <div className="mt-8 pt-6 border-t border-gray-100">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {/* Stats Strip */}
+          <div className="mt-8 rounded-2xl overflow-hidden bg-gradient-to-r from-[#0B3D54] via-[#1D6375] to-[#2A8A9E] shadow-[0_8px_32px_rgba(11,61,84,0.2)]">
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
               {[
-                { value: '9+', label: 'Years Active' },
-                { value: '10k+', label: 'SKUs' },
-                { value: 'ISO', label: 'Certified' },
-                { value: '24/7', label: 'Support' },
-              ].map((stat, i) => (
-                <div key={i} className="py-3">
-                  <p className="text-2xl font-serif text-[#0B3D54] font-bold">{stat.value}</p>
-                  <p className="text-[10px] text-[#2A8A9E] font-semibold uppercase tracking-[0.2em] mt-1">{stat.label}</p>
+                { value: '9+', label: 'Years Active', Icon: Award },
+                { value: '10k+', label: 'SKUs Provided', Icon: Package },
+                { value: 'ISO', label: 'Certified', Icon: BadgeCheck },
+                { value: '24/7', label: 'Support Line', Icon: PhoneCall },
+              ].map(({ value, label, Icon }, i) => (
+                <div key={i} className="flex flex-col items-center justify-center py-5 px-4 hover:bg-white/10 transition-colors duration-300 group">
+                  <Icon className="w-5 h-5 text-[#A8D8DF] mb-2 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                  <p className="text-2xl font-serif text-white font-bold drop-shadow">{value}</p>
+                  <p className="text-[10px] text-[#A8D8DF] font-semibold uppercase tracking-[0.18em] mt-1">{label}</p>
                 </div>
               ))}
             </div>
