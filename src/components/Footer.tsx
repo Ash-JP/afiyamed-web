@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
     MapPin,
     Phone,
@@ -20,7 +21,15 @@ export function Footer() {
 
                     {/* Brand Info */}
                     <div className="col-span-1 md:col-span-1">
-                        <span className="text-2xl font-bold font-serif tracking-tight drop-shadow-sm">AL AFIYA</span>
+                        <Link href="/" className="inline-block mb-2">
+                            <Image
+                                src="/logo.png"
+                                alt="Al Afiya Medical Supplies"
+                                width={200}
+                                height={56}
+                                className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] w-[200px]"
+                            />
+                        </Link>
                         <p className="mt-4 text-[13px] text-[#A8D8DF] leading-relaxed">
                             Leading medical equipment and consumables distributor in the Middle East. Over 9 years of excellence in serving healthcare professionals.
                         </p>

@@ -36,7 +36,7 @@ export default function Home() {
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-[1.15] tracking-tight drop-shadow-lg">
-                A Culture of Caring, A Legacy of Quality
+                A Culture of Caring,<br />A Legacy of Quality
               </h1>
               <p className="text-lg md:text-xl text-[#D6E9EC] mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
                 Critical medical and surgical supplies delivered across the UAE & GCC with unmatched logistics reliability. Empowering facilities of all sizes.
@@ -58,40 +58,40 @@ export default function Home() {
             </div>
 
             {/* Hero Image Area (Square, Unstretched, 100% visible) */}
-            <div className="relative w-full max-w-md mx-auto aspect-square order-1 lg:order-2">
+            <div className="relative w-full max-w-md mx-auto aspect-square order-1 lg:order-2 animate-hero-breath cursor-pointer">
               <Image
                 src="/hero.png"
                 alt="Medical Supplies Hero"
                 fill
-                className="object-contain opacity-100 relative z-20 brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] drop-shadow-[0_0_15px_rgba(168,216,223,0.5)] transition-all duration-500 hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:scale-105"
+                className="object-contain opacity-30 relative z-20 brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:brightness-0 hover:invert hover:opacity-50"
                 priority
               />
             </div>
 
           </div>
         </div>
-      </section>
 
-      {/* Trusted Partners Section */}
-      <section className="py-16 bg-white border-b border-[#D6E9EC] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-[#4A6870] font-semibold text-sm uppercase tracking-widest mb-10">Trusted by Industry Leaders</p>
-
-          {/* Scrolling Marquee Container */}
-          <div className="relative flex overflow-x-hidden group">
-            <div className="animate-marquee whitespace-nowrap flex items-center gap-16 py-4">
-              {/* Partner Logos (Placeholders using tech/medical names) */}
-              {['MedTech Global', 'SurgiPrime', 'BioNova Labs', 'CareEquip UAE', 'HealthPlus Solutions', 'Apex Diagnostics'].map((partner, index) => (
-                <div key={index} className="flex items-center justify-center min-w-[150px] opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
-                  <span className="text-2xl font-bold font-serif text-[#0B3D54]">{partner}</span>
-                </div>
-              ))}
-              {/* Duplicate array for seamless infinite scroll */}
-              {['MedTech Global', 'SurgiPrime', 'BioNova Labs', 'CareEquip UAE', 'HealthPlus Solutions', 'Apex Diagnostics'].map((partner, index) => (
-                <div key={`dup-${index}`} className="flex items-center justify-center min-w-[150px] opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
-                  <span className="text-2xl font-bold font-serif text-[#0B3D54]">{partner}</span>
-                </div>
-              ))}
+        {/* Trusted Partners Marquee */}
+        <div className="w-full relative mt-20 border-t border-white/10 pt-10 z-[30]">
+          <p className="text-center text-[#A8D8DF] font-semibold text-xs uppercase tracking-[0.2em] mb-10 drop-shadow-sm">Trusted by Industry Leaders</p>
+          <div className="relative flex overflow-hidden w-full group">
+            <div className="animate-marquee whitespace-nowrap flex items-center group-hover:[animation-play-state:paused] hover:[animation-play-state:paused]">
+              {/* First block */}
+              <div className="flex items-center gap-6 pr-6">
+                {['MedTech Global', 'SurgiPrime', 'BioNova Labs', 'CareEquip UAE', 'HealthPlus Solutions', 'Apex Diagnostics'].map((partner, index) => (
+                  <div key={index} className="flex items-center justify-center shrink-0 w-[240px] h-24 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer shadow-[0_4px_24px_rgba(0,0,0,0.1)] hover:-translate-y-1">
+                    <span className="text-xl font-bold font-serif text-white/90 drop-shadow-sm">{partner}</span>
+                  </div>
+                ))}
+              </div>
+              {/* Second block (duplicate) */}
+              <div className="flex items-center gap-6 pr-6">
+                {['MedTech Global', 'SurgiPrime', 'BioNova Labs', 'CareEquip UAE', 'HealthPlus Solutions', 'Apex Diagnostics'].map((partner, index) => (
+                  <div key={`dup-${index}`} className="flex items-center justify-center shrink-0 w-[240px] h-24 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer shadow-[0_4px_24px_rgba(0,0,0,0.1)] hover:-translate-y-1">
+                    <span className="text-xl font-bold font-serif text-white/90 drop-shadow-sm">{partner}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
