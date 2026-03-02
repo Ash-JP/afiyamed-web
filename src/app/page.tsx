@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-24 pb-32 lg:pt-36 lg:pb-40">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-24 pb-32 lg:pt-0 lg:pb-0 lg:min-h-screen flex flex-col justify-center">
 
         {/* Subtle Lighting Effects Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -24,8 +24,8 @@ export default function Home() {
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8">
 
             {/* Text Content Area */}
             <div className="text-center lg:text-left order-2 lg:order-1">
@@ -72,8 +72,8 @@ export default function Home() {
         </div>
 
         {/* Trusted Partners Marquee */}
-        <div className="w-full relative mt-20 border-t border-white/10 pt-10 z-[30]">
-          <p className="text-center text-[#A8D8DF] font-semibold text-xs uppercase tracking-[0.2em] mb-10 drop-shadow-sm">Trusted by Industry Leaders</p>
+        <div className="w-full relative mt-12 lg:mt-auto border-t border-white/10 pt-8 pb-8 z-[30]">
+          <p className="text-center text-[#A8D8DF] font-semibold text-xs uppercase tracking-[0.2em] mb-8 drop-shadow-sm">Trusted by Industry Leaders</p>
           <div className="relative flex overflow-hidden w-full group">
             <div className="animate-marquee whitespace-nowrap flex items-center group-hover:[animation-play-state:paused] hover:[animation-play-state:paused]">
               {/* First block */}
