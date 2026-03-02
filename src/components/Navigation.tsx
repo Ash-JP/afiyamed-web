@@ -88,7 +88,7 @@ export function Navigation() {
                             <div className="hidden sm:flex sm:items-center sm:space-x-1 lg:space-x-2">
                                 {[
                                     { name: "Home", path: "/" },
-                                    { name: "About Us", path: "/about" },
+                                    { name: "About", path: "/about" },
                                     { name: "Products", path: "/products" },
                                     { name: "Services", path: "/services" },
                                     { name: "Contact", path: "/contact" }
