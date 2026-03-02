@@ -46,6 +46,54 @@ export default function AboutPage() {
                 </div>
 
             </section>
+
+            {/* ✅ COMPANY MESSAGE */}
+            <section className="py-24 px-6">
+                <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-10">
+
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#164B5F] mb-6 text-center">
+                        Bridging Global Innovation with Regional Clinical Needs
+                    </h2>
+
+                    <p className="text-[#4A6070] leading-relaxed mb-4">
+                        In 2017, Al Afiya Medical Supplies LLC was founded on a premise that remains at the heart of everything we do:
+                        the belief that the right tools, delivered at the right time, are the foundation of better health.
+                    </p>
+
+                    <p className="text-[#4A6070] leading-relaxed mb-4">
+                        Today, we serve as a vital link in the regional healthcare value chain, connecting hospitals and clinics across
+                        the UAE and Oman with the latest advancements in medical technology. We understand that modern healthcare
+                        providers face a dual challenge: the need to adopt complex, new therapies while maintaining operational
+                        and budgetary efficiency.
+                    </p>
+
+                    <p className="text-[#4A6070] leading-relaxed mb-4">
+                        We bridge this gap through strategic scouting and rigorous supply chain management. By introducing novel
+                        surgical methods to our market, we empower our medical community to address evolving health complexities
+                        with confidence and precision.
+                    </p>
+
+                    <p className="text-[#4A6070] leading-relaxed mb-6">
+                        At Al Afiya, we are not just a distributor; we are your strategic partner. We hold ourselves to a standard
+                        of absolute transparency, ensuring that every product we deliver meets the highest clinical benchmarks.
+                        We look forward to continuing our mission of making world-class healthcare a reality for every segment
+                        of our society.
+                    </p>
+
+                    <div className="text-right mt-8">
+                        <p className="font-semibold text-[#164B5F]">
+                            Best regards,
+                        </p>
+                        <p className="text-[#4A6070]">
+                            [Anish Haneefa]
+                        </p>
+                        <p className="text-[#4A6070]">
+                            CEO, Al Afiya Medical Supplies LLC
+                        </p>
+                    </div>
+
+                </div>
+            </section>
             {/* ✅ OUR BACKGROUND */}
             <section className="relative py-24">
 

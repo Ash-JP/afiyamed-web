@@ -27,7 +27,7 @@ export function Footer() {
                                 alt="Al Afiya Medical Supplies"
                                 width={200}
                                 height={56}
-                                className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] w-[200px]"
+                                className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] w-[200px] dark:brightness-0 dark:invert"
                             />
                         </Link>
                         <p className="mt-4 text-[13px] text-[#A8D8DF] leading-relaxed">
