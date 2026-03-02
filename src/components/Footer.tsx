@@ -16,8 +16,8 @@ import {
 export function Footer() {
     return (
         <footer className="bg-[#0B3D54] border-t border-white/10 text-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
                     {/* Brand Info */}
                     <div className="col-span-1 md:col-span-1">
@@ -27,25 +27,25 @@ export function Footer() {
                                 alt="Al Afiya Medical Supplies"
                                 width={200}
                                 height={56}
-                                className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] w-[200px] dark:brightness-0 dark:invert"
+                                className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] w-[120px] dark:brightness-0 dark:invert"
                             />
                         </Link>
-                        <p className="mt-4 text-[13px] text-[#A8D8DF] leading-relaxed">
+                        <p className="mt-2 text-[12px] text-[#A8D8DF] leading-relaxed">
                             Leading medical equipment and consumables distributor in the Middle East. Over 9 years of excellence in serving healthcare professionals.
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-sm font-semibold tracking-wider text-white uppercase mb-5">Quick Links</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-xs font-semibold tracking-wider text-white uppercase mb-2">Quick Links</h3>
+                        <ul className="space-y-1">
                             {[
                                 { name: "About Us", path: "/about" },
                                 { name: "Products", path: "/products" },
                                 { name: "Services", path: "/services" },
                             ].map((link) => (
                                 <li key={link.name}>
-                                    <Link href={link.path} className="text-[14px] text-[#D6E9EC] hover:text-[#3AABB8] transition-colors flex items-center group">
+                                    <Link href={link.path} className="text-[13px] text-[#D6E9EC] hover:text-[#3AABB8] transition-colors flex items-center group">
                                         <ChevronRight className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                                         {link.name}
                                     </Link>
@@ -56,8 +56,8 @@ export function Footer() {
 
                     {/* Industries Served */}
                     <div>
-                        <h3 className="text-sm font-semibold tracking-wider text-white uppercase mb-5">Industries Served</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-xs font-semibold tracking-wider text-white uppercase mb-2">Industries Served</h3>
+                        <ul className="space-y-1">
                             <li className="text-[14px] text-[#D6E9EC] flex items-center gap-2.5">
                                 <Building2 className="w-4 h-4 text-[#3AABB8]" /> Hospitals & Clinics
                             </li>
@@ -75,8 +75,8 @@ export function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-sm font-semibold tracking-wider text-white uppercase mb-5">Contact Us</h3>
-                        <ul className="space-y-4 text-[14px] text-[#D6E9EC]">
+                        <h3 className="text-xs font-semibold tracking-wider text-white uppercase mb-2">Contact Us</h3>
+                        <ul className="space-y-1 text-[13px] text-[#D6E9EC]">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-[#3AABB8] shrink-0 mt-0.5" />
                                 <span>Dubai Healthcare City,<br />Dubai, United Arab Emirates</span>
@@ -94,8 +94,8 @@ export function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-14 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-[13px] text-[#A8D8DF]">
+                <div className="mt-5 border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center gap-3">
+                    <p className="text-[12px] text-[#A8D8DF]">
                         &copy; {new Date().getFullYear()} Al Afiya Medical Supplies LLC. All rights reserved.
                     </p>
                     <div className="flex space-x-5">
