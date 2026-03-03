@@ -75,7 +75,7 @@ export function Navigation() {
                                         width={160}
                                         height={45}
                                         priority
-                                        className={`brightness-0 invert hover:opacity-100 transition-all duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] ${isScrolled ? "w-[130px] opacity-100" : "w-[160px] opacity-90 group-hover/logo:opacity-100"
+                                        className={`brightness-0 invert hover:opacity-100 transition-all duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:brightness-0 dark:invert ${isScrolled ? "w-[130px] opacity-100" : "w-[160px] opacity-90 group-hover/logo:opacity-100"
                                             }`}
                                     />
                                 </Link>
