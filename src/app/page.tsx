@@ -145,7 +145,7 @@ export default function Home() {
               className="relative w-full max-w-md mx-auto aspect-square order-1 lg:order-2 animate-hero-breath cursor-pointer"
             >
               <Image
-                src="/hero.png"
+                src="/hero.webp"
                 alt="Medical Supplies Hero"
                 fill
                 className="object-contain opacity-30 relative z-20 brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:brightness-0 hover:invert hover:opacity-50"
