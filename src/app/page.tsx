@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-20 pb-12 lg:pt-0 lg:pb-0 lg:min-h-[58vh] flex flex-col justify-center">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-28 pb-16 lg:pt-32 lg:pb-20 min-h-[50vh] lg:min-h-[65vh] flex flex-col justify-center">
 
         {/* Subtle Lighting Effects Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
