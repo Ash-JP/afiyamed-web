@@ -189,7 +189,38 @@ export default function AboutClient() {
                     </div>
                 </div>
             </section>
+            {/* ✅ IMPACT STATS SECTION */}
+            <section className="py-20 bg-white">
+                <div className="max-w-6xl mx-auto px-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 
+                        {/* Stat 1 */}
+                        <div className="text-center p-6 border-r border-gray-100 last:border-0">
+                            <p className="text-[#2BA8B8] text-4xl md:text-5xl font-bold mb-2">2017</p>
+                            <p className="text-[#164B5F] font-semibold uppercase tracking-wider text-xs">Established</p>
+                        </div>
+
+                        {/* Stat 2 */}
+                        <div className="text-center p-6 border-r border-gray-100 last:border-0 md:block hidden">
+                            <p className="text-[#2BA8B8] text-4xl md:text-5xl font-bold mb-2">50+</p>
+                            <p className="text-[#164B5F] font-semibold uppercase tracking-wider text-xs">Global Partners</p>
+                        </div>
+
+                        {/* Stat 3 */}
+                        <div className="text-center p-6 border-r border-gray-100 last:border-0">
+                            <p className="text-[#2BA8B8] text-4xl md:text-5xl font-bold mb-2">2</p>
+                            <p className="text-[#164B5F] font-semibold uppercase tracking-wider text-xs">Countries (UAE & Oman)</p>
+                        </div>
+
+                        {/* Stat 4 */}
+                        <div className="text-center p-6">
+                            <p className="text-[#2BA8B8] text-4xl md:text-5xl font-bold mb-2">100%</p>
+                            <p className="text-[#164B5F] font-semibold uppercase tracking-wider text-xs">Quality Assured</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
             {/* COMPANY TIMELINE */}
             <section className="py-20 lg:py-28 bg-white relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
