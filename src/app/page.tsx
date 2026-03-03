@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* Our Partners Section */}
-      <section className="bg-white border-b border-gray-100 py-8 lg:min-h-[42vh] flex flex-col justify-center">
+      <section className="bg-white border-b border-gray-100 py-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -179,11 +179,11 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#A8D8DF]/40 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-700"></div>
 
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#F4FBFC] to-white rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-[#D6E9EC]">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#F4FBFC] to-white rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-[#D6E9EC]">
                   <HeartPulse className="w-6 h-6 text-[#267D91]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">Clinical Equipment</h4>
-                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-8">Heavy-duty imaging, monitoring, and diagnostic hardware constructed for modern hospital wards.</p>
+                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-5">Heavy-duty imaging, monitoring, and diagnostic hardware constructed for modern hospital wards.</p>
                 <Link href="/products" className="text-[13px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
                   View Category
                   <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
@@ -204,11 +204,11 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#A8D8DF]/40 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-700"></div>
 
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#F4FBFC] to-white rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-[#D6E9EC]">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#F4FBFC] to-white rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-[#D6E9EC]">
                   <Microscope className="w-6 h-6 text-[#267D91]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">Laboratory Supplies</h4>
-                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-8">High-precision instrumentation, sterile reagents, and glassware dedicated to diagnostic centers.</p>
+                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-5">High-precision instrumentation, sterile reagents, and glassware dedicated to diagnostic centers.</p>
                 <Link href="/products" className="text-[13px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
                   View Category
                   <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
@@ -229,11 +229,11 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#A8D8DF]/40 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-700"></div>
 
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#F4FBFC] to-white rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-[#D6E9EC]">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#F4FBFC] to-white rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-[#D6E9EC]">
                   <Scissors className="w-6 h-6 text-[#267D91]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">Surgical Consumables</h4>
-                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-8">Sterile drapes, rapid-deploy sutures, and specialized protective wear for high-stakes procedures.</p>
+                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-5">Sterile drapes, rapid-deploy sutures, and specialized protective wear for high-stakes procedures.</p>
                 <Link href="/products" className="text-[13px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
                   View Category
                   <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
@@ -252,7 +252,7 @@ export default function Home() {
         <div className="absolute right-0 bottom-0 w-[800px] h-[800px] bg-gradient-to-tl from-[#EBF5F8] to-transparent rounded-full blur-3xl transform translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left Side: Quality Promise */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -261,11 +261,11 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4 drop-shadow-sm">Core Values</h2>
-              <h3 className="text-3xl md:text-5xl font-serif text-[#0B3D54] mb-6 leading-tight">Why Healthcare Leaders Choose Al Afiya</h3>
-              <p className="text-[16px] text-[#4A6870] leading-relaxed mb-10 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
+              <h3 className="text-2xl md:text-4xl font-serif text-[#0B3D54] mb-4 leading-tight">Why Healthcare Leaders Choose Al Afiya</h3>
+              <p className="text-[15px] text-[#4A6870] leading-relaxed mb-6 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
 
-              <ul className="space-y-6">
-                <li className="flex items-start bg-white/50 backdrop-blur-md p-6 rounded-[20px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
+              <ul className="space-y-3">
+                <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-xl shadow-inner flex items-center justify-center text-white">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
@@ -274,7 +274,7 @@ export default function Home() {
                     <p className="text-[14px] text-[#4A6870] leading-relaxed">We distribute exclusively from globally recognized, ISO-certified manufacturing partners.</p>
                   </div>
                 </li>
-                <li className="flex items-start bg-white/50 backdrop-blur-md p-6 rounded-[20px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
+                <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-xl shadow-inner flex items-center justify-center text-white">
                     <Truck className="w-6 h-6" />
                   </div>
@@ -297,30 +297,30 @@ export default function Home() {
               {/* Soft glow behind the dark card */}
               <div className="absolute inset-0 bg-[#A8D8DF] rounded-[40px] transform translate-x-4 translate-y-4 blur-xl opacity-40"></div>
 
-              <div className="relative bg-gradient-to-br from-[#0B3D54] via-[#164D5C] to-[#267D91] rounded-[40px] p-10 md:p-14 shadow-2xl overflow-hidden border border-[#3AABB8]/20">
+              <div className="relative bg-gradient-to-br from-[#0B3D54] via-[#164D5C] to-[#267D91] rounded-[32px] p-8 shadow-2xl overflow-hidden border border-[#3AABB8]/20">
                 {/* Inner glass highlights */}
                 <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-gradient-to-bl from-white/10 to-transparent rounded-full blur-[30px] pointer-events-none"></div>
                 <div className="absolute bottom-[-10%] left-[-10%] w-48 h-48 bg-[#3AABB8] mix-blend-screen rounded-full blur-[60px] opacity-30 pointer-events-none"></div>
 
-                <h4 className="text-white font-serif text-3xl mb-10 relative z-10 flex items-center justify-between">
+                <h4 className="text-white font-serif text-2xl mb-6 relative z-10 flex items-center justify-between">
                   Sectors We Supply
                   <span className="w-12 h-px bg-gradient-to-r from-[#A8D8DF] to-transparent"></span>
                 </h4>
 
                 <div className="grid grid-cols-2 gap-4 relative z-10">
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[20px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <Building2 className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
                     <span className="text-white text-[13px] font-medium tracking-wide">Hospitals</span>
                   </div>
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[20px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <Stethoscope className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
                     <span className="text-white text-[13px] font-medium tracking-wide">Clinics</span>
                   </div>
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[20px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <FlaskConical className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
                     <span className="text-white text-[13px] font-medium tracking-wide">Diag. Labs</span>
                   </div>
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[20px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <Pill className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
                     <span className="text-white text-[13px] font-medium tracking-wide">Pharmacies</span>
                   </div>
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* CTA Block */}
-      <section className="py-20 relative overflow-hidden bg-[#F4FBFC] border-t border-gray-200">
+      <section className="py-14 relative overflow-hidden bg-[#F4FBFC] border-t border-gray-200">
         {/* Glow Effects */}
         <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
           <div className="w-full max-w-2xl h-[300px] bg-gradient-to-r from-[#A8D8DF] via-[#3AABB8] to-transparent blur-[100px] opacity-40 transform -rotate-12"></div>
