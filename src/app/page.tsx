@@ -200,10 +200,9 @@ export default function Home() {
 
       {/* Stats Strip */}
       <motion.section
-        variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, amount: 0.3 }}
         className="bg-white py-14"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -214,7 +213,14 @@ export default function Home() {
               { value: 'ISO', label: 'Certified', Icon: BadgeCheck },
               { value: '24/7', label: 'Support Line', Icon: PhoneCall },
             ].map(({ value, label, Icon }, i) => (
-              <motion.div key={i} variants={staggerItem} className="flex flex-col items-center justify-center group p-6 rounded-2xl bg-[#F4FBFC] border border-[#D6E9EC] hover:border-[#3AABB8]/40 hover:shadow-lg transition-all duration-300">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="flex flex-col items-center justify-center group p-6 rounded-2xl bg-[#F4FBFC] border border-[#D6E9EC] hover:border-[#3AABB8]/40 hover:shadow-lg transition-all duration-300"
+              >
                 <p className="text-4xl font-serif text-[#0B3D54] font-bold mb-2">{value}</p>
                 <Icon className="w-5 h-5 text-[#3AABB8] mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <p className="text-[11px] text-[#4A6870] font-bold uppercase tracking-[0.2em] text-center">{label}</p>
@@ -247,7 +253,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4 drop-shadow-sm">Core Values</h2>
-              <h3 className="text-2xl md:text-4xl font-serif text-[#0B3D54] mb-4 leading-tight">Why Healthcare Leaders Choose Al Afiya</h3>
+              <h3 className="text-2xl md:text-4xl font-serif text-[#0B3D54] mb-4 leading-tight">Why Healthcare Leaders Choose <br />Al Afiya</h3>
               <p className="text-[15px] text-[#4A6870] leading-relaxed mb-6 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
 
               <ul className="space-y-3">

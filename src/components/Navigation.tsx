@@ -3,12 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    
+    const pathname = usePathname();
+    const router = useRouter();
 
     // Flow scroll effect
     useEffect(() => {
@@ -39,6 +43,30 @@ export function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY, isMobileMenuOpen]);
 
+    // Function to handle logo click and scroll to hero
+    const handleLogoClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        
+        // If we're already on the homepage, scroll to hero section
+        if (pathname === "/") {
+            const heroSection = document.getElementById("hero");
+            if (heroSection) {
+                heroSection.scrollIntoView({ behavior: "smooth" });
+            } else {
+                // If no hero section found, just scroll to top
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        } else {
+            // Navigate to homepage
+            router.push("/");
+        }
+        
+        // Close mobile menu if open
+        if (isMobileMenuOpen) {
+            setIsMobileMenuOpen(false);
+        }
+    };
+
     return (
         <div
             className={`fixed left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isVisible ? "top-6 translate-y-0 opacity-100" : "top-0 -translate-y-full opacity-0"
@@ -68,7 +96,11 @@ export function Navigation() {
 
                             {/* Logo Area */}
                             <div className="flex items-center relative z-10">
-                                <Link href="/" className="flex-shrink-0 flex items-center group/logo">
+                                <a 
+                                    href="/"
+                                    onClick={handleLogoClick}
+                                    className="flex-shrink-0 flex items-center group/logo cursor-pointer"
+                                >
                                     <Image
                                         src="/logo.png"
                                         alt="Al Afiya Medical Supplies"
@@ -78,7 +110,7 @@ export function Navigation() {
                                         className={`brightness-0 invert hover:opacity-100 transition-all duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:brightness-0 dark:invert ${isScrolled ? "w-[130px] opacity-100" : "w-[160px] opacity-90 group-hover/logo:opacity-100"
                                             }`}
                                     />
-                                </Link>
+                                </a>
                                 {/* Vertical Divider */}
                                 <div className={`hidden md:block w-px bg-white/20 ml-8 mr-2 transition-all duration-500 ${isScrolled ? "h-6 opacity-50" : "h-8 opacity-100"
                                     }`}></div>
