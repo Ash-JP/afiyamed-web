@@ -40,10 +40,10 @@ export default function AboutPage() {
                         <h1 className="text-4xl font-bold mb-4">
                             Who Are We
                         </h1>
-                        <p className="text-lg text-[#BFE9EF]">
-                            Since 2017, Al Afiya Medical Supplies LLC has been more than just a distributor; we are a vital partner in the regional healthcare ecosystem. With a distribution network that reaches every corner of the UAE and Oman, we serve the region’s most prestigious clinics and hospitals with a simple, powerful promise: Quality care should be accessible to everyone.
-
-                            We specialize in sourcing and delivering medical products that balance high clinical standards with economic value. However, we don't just supply the present—we look to the future. By introducing novel surgical methods and advanced therapeutic products to the GCC market, we empower healthcare professionals to tackle increasing medical complications with confidence. At Al Afiya, we are proud to support the health of our community, one delivery at a time.
+                        <p className="text-lg text-[#BFE9EF] max-w-4xl mx-auto">
+                            At Al Afiya Medical Supplies LLC, we operate at the intersection of global medical innovation
+                            and regional clinical excellence. Our mission transcends simple distribution; we provide
+                            strategic healthcare enablement designed to bolster the medical infrastructure of the UAE and Oman.
                         </p>
                     </div>
                 </Reveal>
@@ -76,7 +76,20 @@ export default function AboutPage() {
                         Whether through established essentials or pioneering new technologies, Al Afiya is a trusted
                         link in the region’s healthcare value chain.
                     </p>
-
+                    {/* Specialization Grid */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+                        {[
+                            { title: "Surgical Systems", desc: "Advanced specialty devices and therapeutic methods." },
+                            { title: "Laboratory Diagnostics", desc: "Precision instruments for accurate clinical outcomes." },
+                            { title: "Critical Care", desc: "Essential equipment and consumables for life-saving care." },
+                            { title: "Innovation Scouting", desc: "Identifying global advancements to replace traditional methods." }
+                        ].map((item, index) => (
+                            <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-[#2BA8B8]/20">
+                                <h4 className="text-[#164B5F] font-bold mb-2">{item.title}</h4>
+                                <p className="text-sm text-[#4A6070]">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
             {/* ✅ COMPANY TIMELINE */}
@@ -225,7 +238,7 @@ export default function AboutPage() {
                         <div className="mt-8 border-t pt-6">
                             <p className="font-semibold text-[#164B5F]">Best regards,</p>
                             <p className="text-[#4A6070] mt-1">
-                                [Name of CEO/Managing Director]
+                                Anish Haneefa
                             </p>
                             <p className="text-[#4A6070] text-sm">
                                 Managing Director, Al Afiya Medical Supplies LLC
@@ -251,62 +264,59 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ✅ COMPANY INTRO */}
-            <section className="py-20">
-                <div className="max-w-5xl mx-auto px-6 text-center">
-
-                    <h2 className="text-3xl font-bold text-[#164B5F] mb-6">
-                        About Al Afiya Medical Supplies
-                    </h2>
-
-                    <p className="text-[#4A6070] leading-relaxed">
-                        Al Afiya Medical Supplies LLC is a trusted distribution and trading company
-                        specializing in high-quality surgical equipment, medical devices, and healthcare solutions.
-                    </p>
-
-                    <p className="text-[#4A6070] leading-relaxed mt-4">
-                        With a strong commitment to quality, reliability, and customer satisfaction,
-                        we proudly serve hospitals, clinics, laboratories, and healthcare providers.
-                    </p>
-
-                </div>
-            </section>
-
-            {/* ✅ IMAGE + CONTENT SECTION (RESTORED) */}
-            <section className="pb-24">
-
-                <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-                    {/* LEFT CONTENT */}
-                    <Reveal>
-                        <div>
-                            <h3 className="text-3xl font-bold text-[#164B5F] mb-6">
-                                Excellence in Healthcare Distribution
-                            </h3>
-
-                            <p className="text-[#4A6070] leading-relaxed">
-                                We bridge the gap between world-class manufacturers and healthcare professionals
-                                by delivering dependable medical solutions that support better patient care,
-                                operational efficiency, and clinical excellence.
-                            </p>
-
-
-                        </div>
-                    </Reveal>
-
-                    {/* RIGHT IMAGE CARD */}
-                    <div className="bg-white rounded-2xl shadow-xl p-6 border border-slate-100">
-
-                        <Image
-                            src="/about-image.png"   // ✅ YOUR IMAGE HERE
-                            alt="Medical Supplies"
-                            width={500}
-                            height={350}
-                            className="rounded-xl object-cover"
-                        />
-
+            {/* ✅ STRATEGIC PILLARS SECTION */}
+            <section className="py-24 bg-white/30 backdrop-blur-sm">
+                <div className="max-w-6xl mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold text-[#164B5F]">Our Strategic Pillars</h2>
+                        <div className="w-20 h-1 bg-[#2BA8B8] mx-auto mt-4 rounded-full"></div>
                     </div>
 
+                    <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+                        <Reveal>
+                            <div>
+                                <h3 className="text-xl font-bold text-[#164B5F] mb-4 flex items-center gap-2">
+                                    <span className="text-[#2BA8B8]">01.</span> Comprehensive Distribution
+                                </h3>
+                                <p className="text-[#4A6070] leading-relaxed">
+                                    Utilizing a sophisticated logistics network, we ensure the seamless delivery of supplies to both urban centers and remote facilities. Our supply chain is optimized for reliability and regulatory compliance.
+                                </p>
+                            </div>
+                        </Reveal>
+
+                        <Reveal>
+                            <div>
+                                <h3 className="text-xl font-bold text-[#164B5F] mb-4 flex items-center gap-2">
+                                    <span className="text-[#2BA8B8]">02.</span> Healthcare Partnerships
+                                </h3>
+                                <p className="text-[#4A6070] leading-relaxed">
+                                    We serve as a trusted intermediary between global manufacturers and the regional healthcare sector, facilitating the smooth integration of new technologies into government and private institutions.
+                                </p>
+                            </div>
+                        </Reveal>
+
+                        <Reveal>
+                            <div>
+                                <h3 className="text-xl font-bold text-[#164B5F] mb-4 flex items-center gap-2">
+                                    <span className="text-[#2BA8B8]">03.</span> Value-Based Procurement
+                                </h3>
+                                <p className="text-[#4A6070] leading-relaxed">
+                                    We bridge the gap between high-end clinical requirements and budget sensitivities by sourcing globally certified products at economic prices, enabling superior care for all.
+                                </p>
+                            </div>
+                        </Reveal>
+
+                        <Reveal>
+                            <div>
+                                <h3 className="text-xl font-bold text-[#164B5F] mb-4 flex items-center gap-2">
+                                    <span className="text-[#2BA8B8]">04.</span> Regulatory Alignment
+                                </h3>
+                                <p className="text-[#4A6070] leading-relaxed">
+                                    We manage the complexities of market entry, ensuring every solution meets international clinical standards and adheres strictly to regional regulatory requirements.
+                                </p>
+                            </div>
+                        </Reveal>
+                    </div>
                 </div>
             </section>
             {/* ✅ CORE VALUES */}
