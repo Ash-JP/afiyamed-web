@@ -58,9 +58,6 @@ export default function Home() {
                     </span>
                   </div>
                 </Link>
-                <Link href="/contact" className="bg-white/5 hover:bg-white/10 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-full font-semibold text-[15px] transition-all text-center">
-                  Contact Us
-                </Link>
               </div>
             </motion.div>
 
