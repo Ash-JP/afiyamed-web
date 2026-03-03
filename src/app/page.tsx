@@ -22,8 +22,8 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-28 pb-16 lg:pt-32 lg:pb-20 min-h-[50vh] lg:min-h-[65vh] flex flex-col justify-center">
+      {/* Hero Section with Partners & Stats */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-24 pb-12 lg:pt-28 lg:pb-16 flex flex-col justify-center">
 
         {/* Subtle Lighting Effects Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -31,7 +31,7 @@ export default function Home() {
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
         </div>
 
-        <div className="flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-8 lg:mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
 
             {/* Text Content Area */}
@@ -80,74 +80,71 @@ export default function Home() {
 
           </div>
         </div>
-      </section>
 
-      {/* Our Partners Section */}
-      <section className="bg-white border-b border-gray-100 py-10">
+        {/* Our Partners Section (Integrated into Hero Bottom) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         >
           {/* Section Header */}
-          <div className="text-center mb-6">
-            <h2 className="text-[22px] font-extrabold tracking-[6px] uppercase text-[#2A8A9E] mb-3">Our Partners</h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#3AABB8] to-[#1D6375] mx-auto rounded-full"></div>
-            <p className="mt-4 text-[14px] text-[#4A6870] max-w-3xl mx-auto font-light">We collaborate with globally recognized healthcare brands to deliver only the highest calibre of medical products.</p>
+          <div className="text-center mb-8">
+            <p className="text-[14px] font-semibold tracking-[0.3em] uppercase text-[#A8D8DF]/70">Trusted By Global Healthcare Brands</p>
           </div>
 
           {/* Infinite Scrolling Carousel — Single Row */}
-          <div className="relative overflow-hidden w-full py-2">
+          <div className="relative overflow-hidden w-full py-4 mt-2">
             {/* Left fade */}
-            <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#1D6375] to-transparent z-10 pointer-events-none" />
             {/* Right fade */}
-            <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#1D6375] to-transparent z-10 pointer-events-none" />
 
-            <div className="flex animate-marquee group-hover:[animation-play-state:paused] hover:[animation-play-state:paused] group">
-              {[
-                { name: 'MedTech Global', icon: '🏥' },
-                { name: 'SurgiPrime', icon: '🔬' },
-                { name: 'BioNova Labs', icon: '🧬' },
-                { name: 'CareEquip UAE', icon: '⚕️' },
-                { name: 'HealthPlus Solutions', icon: '💊' },
-                { name: 'Apex Diagnostics', icon: '🩺' },
-                { name: 'MedTech Global', icon: '🏥' },
-                { name: 'SurgiPrime', icon: '🔬' },
-                { name: 'BioNova Labs', icon: '🧬' },
-                { name: 'CareEquip UAE', icon: '⚕️' },
-                { name: 'HealthPlus Solutions', icon: '💊' },
-                { name: 'Apex Diagnostics', icon: '🩺' },
-              ].map((partner, index) => (
+            <div className="flex animate-marquee group-hover:[animation-play-state:paused] hover:[animation-play-state:paused] group items-center ![animation-duration:20s]">
+              {/* Load 15 partners twice to ensure a seamless infinite scroll */}
+              {[...Array(15)].map((_, i) => i + 1).concat([...Array(15)].map((_, i) => i + 1)).map((id, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 mx-4 flex items-center gap-3 w-[220px] h-[88px] bg-white border border-gray-100 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_28px_rgba(42,138,158,0.2)] hover:border-[#A8D8DF] hover:-translate-y-1 transition-all duration-300 cursor-pointer px-6 group/card"
+                  className="flex-shrink-0 mx-4 flex items-center justify-center w-32 h-16 bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-white/20 hover:shadow-[0_8px_40px_rgba(255,255,255,0.15)] transition-all duration-300 hover:-translate-y-1 cursor-pointer relative px-4 py-2"
+                  title={`Partner ${id}`}
                 >
-                  <span className="text-2xl select-none">{partner.icon}</span>
-                  <span className="text-[14px] font-bold text-[#4A6870] group-hover/card:text-[#1D6375] font-serif transition-colors tracking-wide whitespace-nowrap leading-tight">{partner.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Stats Strip */}
-          <div className="mt-8 rounded-2xl overflow-hidden bg-gradient-to-r from-[#0B3D54] via-[#1D6375] to-[#2A8A9E] shadow-[0_8px_32px_rgba(11,61,84,0.2)]">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
-              {[
-                { value: '9+', label: 'Years Active', Icon: Award },
-                { value: '10k+', label: 'SKUs Provided', Icon: Package },
-                { value: 'ISO', label: 'Certified', Icon: BadgeCheck },
-                { value: '24/7', label: 'Support Line', Icon: PhoneCall },
-              ].map(({ value, label, Icon }, i) => (
-                <div key={i} className="flex flex-col items-center justify-center py-5 px-4 hover:bg-white/10 transition-colors duration-300 group">
-                  <Icon className="w-5 h-5 text-[#A8D8DF] mb-2 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
-                  <p className="text-2xl font-serif text-white font-bold drop-shadow">{value}</p>
-                  <p className="text-[10px] text-[#A8D8DF] font-semibold uppercase tracking-[0.18em] mt-1">{label}</p>
+                  {/* Using next/image for real SVGs */}
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={`/partners/partner${id}.svg`}
+                      alt={`Partner ${id}`}
+                      fill
+                      className="object-contain drop-shadow-sm"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </motion.div>
+      </section>
+
+      {/* Stats Strip - Below Hero */}
+      <section className="bg-white border-b border-gray-100 py-12 relative z-20 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-200">
+            {[
+              { value: '9+', label: 'Years Active', Icon: Award },
+              { value: '10k+', label: 'SKUs Provided', Icon: Package },
+              { value: 'ISO', label: 'Certified', Icon: BadgeCheck },
+              { value: '24/7', label: 'Support Line', Icon: PhoneCall },
+            ].map(({ value, label, Icon }, i) => (
+              <div key={i} className="flex flex-col items-center justify-center group px-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <Icon className="w-6 h-6 text-[#3AABB8] group-hover:text-[#1D6375] transition-colors" />
+                  <p className="text-4xl font-serif text-[#0B3D54]">{value}</p>
+                </div>
+                <p className="text-[12px] text-[#4A6870] font-bold uppercase tracking-[0.2em]">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Portfolio Focus */}
