@@ -41,13 +41,146 @@ export default function AboutPage() {
                             Who Are We
                         </h1>
                         <p className="text-lg text-[#BFE9EF]">
-                            A Culture of Caring, A Legacy of Quality
+                            Since 2017, Al Afiya Medical Supplies LLC has been more than just a distributor; we are a vital partner in the regional healthcare ecosystem. With a distribution network that reaches every corner of the UAE and Oman, we serve the region’s most prestigious clinics and hospitals with a simple, powerful promise: Quality care should be accessible to everyone.
+
+                            We specialize in sourcing and delivering medical products that balance high clinical standards with economic value. However, we don't just supply the present—we look to the future. By introducing novel surgical methods and advanced therapeutic products to the GCC market, we empower healthcare professionals to tackle increasing medical complications with confidence. At Al Afiya, we are proud to support the health of our community, one delivery at a time.
                         </p>
                     </div>
                 </Reveal>
 
             </section>
+            {/* ✅ BACKGROUND SECTION */}
+            <section className="py-24 relative">
 
+                <div className="max-w-5xl mx-auto px-6 text-center">
+
+                    {/* HEADING (Same Style as OUR PARTNERS) */}
+                    <h2 className="text-[#164B5F] tracking-[0.35em] text-sm font-semibold uppercase">
+                        Background
+                    </h2>
+
+                    <div className="w-20 h-[3px] bg-[#2BA8B8] mx-auto mt-4 mb-10 rounded-full" />
+
+                    {/* CONTENT */}
+                    <p className="text-[#4A6070] leading-relaxed">
+                        Founded in 2017, Al Afiya Medical Supplies LLC is a premier healthcare distributor
+                        headquartered in the UAE, with a robust logistics network spanning the United Arab Emirates
+                        and the Sultanate of Oman. In a relatively short span, we have cultivated enduring partnerships
+                        with the region’s leading private and government healthcare institutions.
+                    </p>
+
+                    <p className="text-[#4A6070] leading-relaxed mt-6">
+                        Our foundation is built on the belief that premium medical care should be accessible to all.
+                        By bridging the gap between global healthcare innovations and local clinical needs, we ensure
+                        that both providers and patients have access to the tools required for better health outcomes.
+                        Whether through established essentials or pioneering new technologies, Al Afiya is a trusted
+                        link in the region’s healthcare value chain.
+                    </p>
+
+                </div>
+            </section>
+            {/* ✅ COMPANY TIMELINE */}
+            <section className="relative py-28 px-6 bg-[#F4FBFC] overflow-hidden">
+
+                <div className="max-w-6xl mx-auto">
+
+                    {/* SECTION HEADING */}
+                    <Reveal>
+                        <div className="text-center mb-20">
+                            <h2 className="text-4xl font-bold text-[#164B5F] mb-4">
+                                Company Timeline
+                            </h2>
+                            <div className="w-20 h-1 bg-[#2BA8B8] mx-auto"></div>
+                        </div>
+                    </Reveal>
+
+                    {/* TIMELINE GRID */}
+                    <div className="grid md:grid-cols-2 gap-16">
+
+                        {/* 2017 */}
+                        <Reveal>
+                            <div className="relative group cursor-pointer">
+
+                                <span className="absolute text-[120px] font-bold text-[#164B5F]/20 -top-12 left-0 select-none transition-transform duration-500 ease-out group-hover:-translate-y-3">
+                                    2017
+                                </span>
+
+                                <div className="relative pt-12">
+                                    <h3 className="text-xl font-bold text-[#164B5F]">
+                                        Company Founded
+                                    </h3>
+                                    <p className="text-[#4A6070] mt-3 leading-relaxed">
+                                        Al Afiya Medical Supplies LLC was established in the UAE with a mission to bridge global healthcare innovations with regional clinical needs.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </Reveal>
+
+                        {/* 2019 */}
+                        <Reveal>
+                            <div className="relative group cursor-pointer">
+
+                                <span className="absolute text-[120px] font-bold text-[#164B5F]/20 -top-12 left-0 select-none transition-transform duration-500 ease-out group-hover:-translate-y-3">
+                                    2019
+                                </span>
+
+                                <div className="relative pt-12">
+                                    <h3 className="text-xl font-bold text-[#164B5F]">
+                                        Regional Expansion
+                                    </h3>
+                                    <p className="text-[#4A6070] mt-3 leading-relaxed">
+                                        Expanded logistics network across the UAE and Oman, building strong partnerships with leading healthcare institutions.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </Reveal>
+
+                        {/* 2022 */}
+                        <Reveal>
+                            <div className="relative group cursor-pointer">
+
+                                <span className="absolute text-[120px] font-bold text-[#164B5F]/20 -top-12 left-0 select-none transition-transform duration-500 ease-out group-hover:-translate-y-3">
+                                    2022
+                                </span>
+
+                                <div className="relative pt-12">
+                                    <h3 className="text-xl font-bold text-[#164B5F]">
+                                        Technology Integration
+                                    </h3>
+                                    <p className="text-[#4A6070] mt-3 leading-relaxed">
+                                        Introduced advanced surgical technologies and modern laboratory equipment to support evolving clinical demands.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </Reveal>
+
+                        {/* 2024 */}
+                        <Reveal>
+                            <div className="relative group cursor-pointer">
+
+                                <span className="absolute text-[120px] font-bold text-[#164B5F]/20 -top-12 left-0 select-none transition-transform duration-500 ease-out group-hover:-translate-y-3">
+                                    2024
+                                </span>
+
+                                <div className="relative pt-12">
+                                    <h3 className="text-xl font-bold text-[#164B5F]">
+                                        Strategic Growth
+                                    </h3>
+                                    <p className="text-[#4A6070] mt-3 leading-relaxed">
+                                        Strengthened supplier alliances and enhanced supply chain transparency to ensure consistent product quality and availability.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </Reveal>
+
+                    </div>
+
+                </div>
+            </section>
             {/* ✅ COMPANY MESSAGE — PREMIUM VERSION */}
             <section className="relative py-28 px-6">
 
