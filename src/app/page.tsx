@@ -2,7 +2,24 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useAnimationFrame, useTransform, useSpring, type Variants } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+
+// Reusable scroll-reveal animation variants
+const sectionReveal: Variants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } }
+};
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
+};
+
+const staggerItem: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 import {
   HeartPulse,
   Microscope,
@@ -19,11 +36,71 @@ import {
   PhoneCall
 } from "lucide-react";
 
+function DraggableMarquee({ children, baseVelocity = -1 }: { children: React.ReactNode, baseVelocity?: number }) {
+  const baseX = useMotionValue(0);
+
+  // Create a spring for smooth movement
+  const smoothX = useSpring(baseX, {
+    damping: 50,
+    stiffness: 400
+  });
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [contentWidth, setContentWidth] = useState(0);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setContentWidth(containerRef.current.scrollWidth / 2);
+    }
+  }, [children]);
+
+  const wrapValue = (min: number, max: number, v: number) => {
+    const rangeSize = max - min;
+    return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+  };
+
+  useAnimationFrame((t, delta) => {
+    if (contentWidth === 0) return;
+
+    // Constant auto-scroll
+    let moveBy = baseVelocity * (delta / 16);
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  const x = useTransform(smoothX, (v: number) => {
+    if (contentWidth === 0) return "0px";
+    return `${wrapValue(-contentWidth, 0, v)}px`;
+  });
+
+  return (
+    <div className="overflow-hidden whitespace-nowrap flex flex-nowrap">
+      <motion.div
+        ref={containerRef}
+        className="flex flex-nowrap"
+        style={{ x }}
+        drag="x"
+        dragElastic={0.1}
+        onDrag={(e, info) => {
+          // Manually update baseX during drag for immediate feedback
+          baseX.set(baseX.get() + info.delta.x);
+        }}
+        onDragEnd={(e, info) => {
+          // Add inertia based on drag velocity
+          baseX.set(baseX.get() + info.velocity.x * 0.1);
+        }}
+      >
+        {children}
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Partners & Stats */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] border-b border-white/10 pt-16 pb-8 lg:pt-20 lg:pb-10 flex flex-col justify-center">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] pt-16 pb-8 lg:pt-20 lg:pb-10 flex flex-col justify-center">
 
         {/* Subtle Lighting Effects Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -37,8 +114,7 @@ export default function Home() {
             {/* Text Content Area */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-center lg:text-left order-2 lg:order-1"
             >
@@ -64,8 +140,7 @@ export default function Home() {
             {/* Hero Image Area (Square, Unstretched, 100% visible) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
               className="relative w-full max-w-md mx-auto aspect-square order-1 lg:order-2 animate-hero-breath cursor-pointer"
             >
@@ -84,9 +159,8 @@ export default function Home() {
         {/* Our Partners Section (Integrated into Hero Bottom) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         >
           {/* Section Header */}
@@ -101,15 +175,14 @@ export default function Home() {
             {/* Right fade */}
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#1D6375] to-transparent z-10 pointer-events-none" />
 
-            <div className="flex animate-marquee group-hover:[animation-play-state:paused] hover:[animation-play-state:paused] group items-center ![animation-duration:20s]">
-              {/* Load 15 partners twice to ensure a seamless infinite scroll */}
-              {[...Array(15)].map((_, i) => i + 1).concat([...Array(15)].map((_, i) => i + 1)).map((id, index) => (
+            <DraggableMarquee baseVelocity={-0.5}>
+              {/* Load 15 partners */}
+              {[...Array(15)].map((_, i) => i + 1).map((id, index) => (
                 <div
                   key={index}
                   className="flex-shrink-0 mx-4 flex items-center justify-center w-32 h-16 bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-white/20 hover:shadow-[0_8px_40px_rgba(255,255,255,0.15)] transition-all duration-300 hover:-translate-y-1 cursor-pointer relative px-4 py-2"
                   title={`Partner ${id}`}
                 >
-                  {/* Using next/image for real SVGs */}
                   <div className="relative w-full h-full">
                     <Image
                       src={`/partners/partner${id}.svg`}
@@ -120,35 +193,138 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
+            </DraggableMarquee>
           </div>
         </motion.div>
       </section>
 
-      {/* Stats Strip - Below Hero */}
-      <section className="bg-white border-b border-gray-100 py-12 relative z-20 shadow-sm">
+      {/* Stats Strip */}
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="bg-white py-14"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { value: '9+', label: 'Years Active', Icon: Award },
               { value: '10k+', label: 'SKUs Provided', Icon: Package },
               { value: 'ISO', label: 'Certified', Icon: BadgeCheck },
               { value: '24/7', label: 'Support Line', Icon: PhoneCall },
             ].map(({ value, label, Icon }, i) => (
-              <div key={i} className="flex flex-col items-center justify-center group px-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <Icon className="w-6 h-6 text-[#3AABB8] group-hover:text-[#1D6375] transition-colors" />
-                  <p className="text-4xl font-serif text-[#0B3D54]">{value}</p>
-                </div>
-                <p className="text-[12px] text-[#4A6870] font-bold uppercase tracking-[0.2em]">{label}</p>
-              </div>
+              <motion.div key={i} variants={staggerItem} className="flex flex-col items-center justify-center group p-6 rounded-2xl bg-[#F4FBFC] border border-[#D6E9EC] hover:border-[#3AABB8]/40 hover:shadow-lg transition-all duration-300">
+                <p className="text-4xl font-serif text-[#0B3D54] font-bold mb-2">{value}</p>
+                <Icon className="w-5 h-5 text-[#3AABB8] mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <p className="text-[11px] text-[#4A6870] font-bold uppercase tracking-[0.2em] text-center">{label}</p>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Core Values & Industries */}
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 bg-[#F4FBFC] overflow-hidden relative"
+
+
+      >
+        {/* Background mesh element linking the visual style */}
+        <div className="absolute right-0 bottom-0 w-[800px] h-[800px] bg-gradient-to-tl from-[#EBF5F8] to-transparent rounded-full blur-3xl transform translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left Side: Quality Promise */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4 drop-shadow-sm">Core Values</h2>
+              <h3 className="text-2xl md:text-4xl font-serif text-[#0B3D54] mb-4 leading-tight">Why Healthcare Leaders Choose Al Afiya</h3>
+              <p className="text-[15px] text-[#4A6870] leading-relaxed mb-6 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
+
+              <ul className="space-y-3">
+                <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-xl shadow-inner flex items-center justify-center text-white">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div className="ml-5">
+                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 tracking-tight">Uncompromising Compliance</h4>
+                    <p className="text-[14px] text-[#4A6870] leading-relaxed">We distribute exclusively from globally recognized, ISO-certified manufacturing partners.</p>
+                  </div>
+                </li>
+                <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-xl shadow-inner flex items-center justify-center text-white">
+                    <Truck className="w-6 h-6" />
+                  </div>
+                  <div className="ml-5">
+                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 tracking-tight">Dynamic Supply Chain</h4>
+                    <p className="text-[14px] text-[#4A6870] leading-relaxed">Optimized central warehousing ensures rapid deployment of critical items immediately.</p>
+                  </div>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Right Side: Visual Industries Grid (Glossy Dark Card) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+
+              {/* Soft glow behind the dark card */}
+              <div className="absolute inset-0 bg-[#A8D8DF] rounded-[40px] transform translate-x-4 translate-y-4 blur-xl opacity-40"></div>
+              <div className="relative bg-gradient-to-br from-[#0B3D54] via-[#164D5C] to-[#267D91] rounded-[32px] p-8 shadow-2xl overflow-hidden border border-[#3AABB8]/20">
+                {/* Inner glass highlights */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-gradient-to-bl from-white/10 to-transparent rounded-full blur-[30px] pointer-events-none"></div>
+                <div className="absolute bottom-[-10%] left-[-10%] w-48 h-48 bg-[#3AABB8] mix-blend-screen rounded-full blur-[60px] opacity-30 pointer-events-none"></div>
+
+                <h4 className="text-white font-serif text-2xl mb-6 relative z-10 flex items-center justify-between">
+                  Sectors We Supply
+                  <span className="w-12 h-px bg-gradient-to-r from-[#A8D8DF] to-transparent"></span>
+                </h4>
+
+                <div className="grid grid-cols-2 gap-4 relative z-10">
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                    <Building2 className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
+                    <span className="text-white text-[13px] font-medium tracking-wide">Hospitals</span>
+                  </div>
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                    <Stethoscope className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
+                    <span className="text-white text-[13px] font-medium tracking-wide">Clinics</span>
+                  </div>
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                    <FlaskConical className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
+                    <span className="text-white text-[13px] font-medium tracking-wide">Diag. Labs</span>
+                  </div>
+                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
+                    <Pill className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
+                    <span className="text-white text-[13px] font-medium tracking-wide">Pharmacies</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Portfolio Focus */}
-      <section className="py-16 bg-gradient-to-b from-[#F0F7F9] to-[#F4FBFC]">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="pb-16 bg-[#F4FBFC]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -238,95 +414,16 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Core Values & Industries */}
-      <section className="py-16 bg-white overflow-hidden relative">
-        {/* Background mesh element linking the visual style */}
-        <div className="absolute right-0 bottom-0 w-[800px] h-[800px] bg-gradient-to-tl from-[#EBF5F8] to-transparent rounded-full blur-3xl transform translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Left Side: Quality Promise */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4 drop-shadow-sm">Core Values</h2>
-              <h3 className="text-2xl md:text-4xl font-serif text-[#0B3D54] mb-4 leading-tight">Why Healthcare Leaders Choose Al Afiya</h3>
-              <p className="text-[15px] text-[#4A6870] leading-relaxed mb-6 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
-
-              <ul className="space-y-3">
-                <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-xl shadow-inner flex items-center justify-center text-white">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <div className="ml-5">
-                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 tracking-tight">Uncompromising Compliance</h4>
-                    <p className="text-[14px] text-[#4A6870] leading-relaxed">We distribute exclusively from globally recognized, ISO-certified manufacturing partners.</p>
-                  </div>
-                </li>
-                <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-xl shadow-inner flex items-center justify-center text-white">
-                    <Truck className="w-6 h-6" />
-                  </div>
-                  <div className="ml-5">
-                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 tracking-tight">Dynamic Supply Chain</h4>
-                    <p className="text-[14px] text-[#4A6870] leading-relaxed">Optimized central warehousing ensures rapid deployment of critical items immediately.</p>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Right Side: Visual Industries Grid (Glossy Dark Card) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              {/* Soft glow behind the dark card */}
-              <div className="absolute inset-0 bg-[#A8D8DF] rounded-[40px] transform translate-x-4 translate-y-4 blur-xl opacity-40"></div>
-
-              <div className="relative bg-gradient-to-br from-[#0B3D54] via-[#164D5C] to-[#267D91] rounded-[32px] p-8 shadow-2xl overflow-hidden border border-[#3AABB8]/20">
-                {/* Inner glass highlights */}
-                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-gradient-to-bl from-white/10 to-transparent rounded-full blur-[30px] pointer-events-none"></div>
-                <div className="absolute bottom-[-10%] left-[-10%] w-48 h-48 bg-[#3AABB8] mix-blend-screen rounded-full blur-[60px] opacity-30 pointer-events-none"></div>
-
-                <h4 className="text-white font-serif text-2xl mb-6 relative z-10 flex items-center justify-between">
-                  Sectors We Supply
-                  <span className="w-12 h-px bg-gradient-to-r from-[#A8D8DF] to-transparent"></span>
-                </h4>
-
-                <div className="grid grid-cols-2 gap-4 relative z-10">
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
-                    <Building2 className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Hospitals</span>
-                  </div>
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
-                    <Stethoscope className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Clinics</span>
-                  </div>
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
-                    <FlaskConical className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Diag. Labs</span>
-                  </div>
-                  <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
-                    <Pill className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Pharmacies</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      </motion.section>
 
       {/* CTA Block */}
-      <section className="py-14 relative overflow-hidden bg-[#F4FBFC] border-t border-gray-200">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="py-14 relative overflow-hidden bg-white"
+      >
         {/* Glow Effects */}
         <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
           <div className="w-full max-w-2xl h-[300px] bg-gradient-to-r from-[#A8D8DF] via-[#3AABB8] to-transparent blur-[100px] opacity-40 transform -rotate-12"></div>
@@ -350,7 +447,7 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
-      </section>
+      </motion.section>
     </div>
   );
 }
