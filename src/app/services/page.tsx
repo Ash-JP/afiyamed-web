@@ -57,7 +57,7 @@ export default function ServicesPage() {
 
             {/* CONTENT SECTION */}
             <section className="py-20 lg:py-28 relative">
-                <div className="absolute left-0 bottom-0 w-[800px] h-[800px] bg-gradient-to-tr from-[#EBF5F8] to-transparent rounded-full blur-3xl transform translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+                {/* Removed bottom-left gradient blob to prevent footer overlap and keep clean aesthetics */}
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="space-y-8 lg:space-y-12">
