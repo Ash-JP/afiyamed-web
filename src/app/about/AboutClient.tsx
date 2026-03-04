@@ -26,14 +26,58 @@ const Reveal = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function AboutClient() {
+    // Array to generate 20 base pairs for the DNA helix
+    const dnaBasePairs = Array.from({ length: 20 });
+
     return (
         <div className="flex flex-col min-h-screen font-sans">
             {/* HERO SECTION */}
             <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] pt-32 pb-20 lg:pt-40 lg:pb-28 flex flex-col justify-center text-white border-b border-white/10">
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                    <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#3AABB8]/20 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] bg-[#2A8A9E]/10 rounded-full blur-[150px]" />
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-40">
+                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent z-10"></div>
+
+                    {/* 3D DNA Helix - Placed diagonally across the background */}
+                    <div className="relative w-64 h-[150%] flex flex-col items-center justify-center gap-6 transform -rotate-45 scale-150 blur-[2px]">
+                        {dnaBasePairs.map((_, i) => (
+                            <div
+                                key={i}
+                                className="relative w-full h-[2px] bg-gradient-to-r from-transparent via-[#3AABB8]/40 to-transparent flex justify-between items-center"
+                                style={{
+                                    animation: `rotate3d 8s linear infinite`,
+                                    animationDelay: `${i * -0.4}s`,
+                                }}
+                            >
+                                <div
+                                    className="w-5 h-5 rounded-full bg-[#A8D8DF] shadow-[0_0_15px_#A8D8DF]"
+                                    style={{
+                                        animation: `fadeNode 8s linear infinite`,
+                                        animationDelay: `${i * -0.4}s`,
+                                    }}
+                                />
+                                <div
+                                    className="w-5 h-5 rounded-full bg-[#1D6375] shadow-[0_0_15px_#1D6375]"
+                                    style={{
+                                        animation: `fadeNode 8s linear infinite`,
+                                        animationDelay: `${(i * -0.4) - 4}s`,
+                                    }}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                      @keyframes rotate3d {
+                        0% { transform: rotateY(0deg); }
+                        100% { transform: rotateY(360deg); }
+                      }
+                      @keyframes fadeNode {
+                        0%, 100% { opacity: 1; transform: scale(1); z-index: 10; }
+                        25% { opacity: 0.5; transform: scale(0.8); z-index: 5; }
+                        50% { opacity: 0.2; transform: scale(0.6); z-index: 0; }
+                        75% { opacity: 0.5; transform: scale(0.8); z-index: 5; }
+                      }
+                    `}} />
                 </div>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
