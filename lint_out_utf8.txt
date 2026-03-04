@@ -1,0 +1,19 @@
+﻿
+> afiyamed-web@0.1.0 lint
+> eslint
+
+
+C:\Users\AASHRAY J PRAMOD\Desktop\afiyamed-web\src\app\about\AboutClient.tsx
+  7:5  warning  'Award' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\AASHRAY J PRAMOD\Desktop\afiyamed-web\src\app\page.tsx
+  14:7  warning  'staggerContainer' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  19:7  warning  'staggerItem' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  66:9  error    'moveBy' is never reassigned. Use 'const' instead      prefer-const
+
+C:\Users\AASHRAY J PRAMOD\Desktop\afiyamed-web\src\components\Navigation.tsx
+  99:33  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+Γ£û 5 problems (2 errors, 3 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
