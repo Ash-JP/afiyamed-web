@@ -11,15 +11,6 @@ const sectionReveal: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } }
 };
 
-const staggerContainer: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
-};
-
-const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
 import {
   HeartPulse,
   Microscope,
@@ -63,7 +54,7 @@ function DraggableMarquee({ children, baseVelocity = -1 }: { children: React.Rea
     if (contentWidth === 0) return;
 
     // Constant auto-scroll
-    let moveBy = baseVelocity * (delta / 16);
+    const moveBy = baseVelocity * (delta / 16);
     baseX.set(baseX.get() + moveBy);
   });
 
@@ -213,8 +204,8 @@ export default function Home() {
               { value: 'ISO', label: 'Certified', Icon: BadgeCheck },
               { value: '24/7', label: 'Support Line', Icon: PhoneCall },
             ].map(({ value, label, Icon }, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}

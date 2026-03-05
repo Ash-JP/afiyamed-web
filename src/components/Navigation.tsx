@@ -10,7 +10,7 @@ export function Navigation() {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    
+
     const pathname = usePathname();
     const router = useRouter();
 
@@ -46,7 +46,7 @@ export function Navigation() {
     // Function to handle logo click and scroll to hero
     const handleLogoClick = (e: React.MouseEvent) => {
         e.preventDefault();
-        
+
         // If we're already on the homepage, scroll to hero section
         if (pathname === "/") {
             const heroSection = document.getElementById("hero");
@@ -60,7 +60,7 @@ export function Navigation() {
             // Navigate to homepage
             router.push("/");
         }
-        
+
         // Close mobile menu if open
         if (isMobileMenuOpen) {
             setIsMobileMenuOpen(false);
@@ -96,7 +96,7 @@ export function Navigation() {
 
                             {/* Logo Area */}
                             <div className="flex items-center relative z-10">
-                                <a 
+                                <Link
                                     href="/"
                                     onClick={handleLogoClick}
                                     className="flex-shrink-0 flex items-center group/logo cursor-pointer"
@@ -110,7 +110,7 @@ export function Navigation() {
                                         className={`brightness-0 invert hover:opacity-100 transition-all duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] dark:brightness-0 dark:invert ${isScrolled ? "w-[130px] opacity-100" : "w-[160px] opacity-90 group-hover/logo:opacity-100"
                                             }`}
                                     />
-                                </a>
+                                </Link>
                                 {/* Vertical Divider */}
                                 <div className={`hidden md:block w-px bg-white/20 ml-8 mr-2 transition-all duration-500 ${isScrolled ? "h-6 opacity-50" : "h-8 opacity-100"
                                     }`}></div>
