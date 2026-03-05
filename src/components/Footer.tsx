@@ -83,11 +83,11 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-[#3AABB8] shrink-0" />
-                                <a href="tel:+971000000000" className="hover:text-[#3AABB8] transition-colors">+971 00 000 0000</a>
+                                <a href="tel:971503074484" className="hover:text-[#3AABB8] transition-colors">971 50 307 4484</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-4 h-4 text-[#3AABB8] shrink-0" />
-                                <a href="mailto:info@alafiyamed.com" className="hover:text-[#3AABB8] transition-colors">info@alafiyamed.com</a>
+                                <a href="mailto:info@afiyamed.com" className="hover:text-[#3AABB8] transition-colors">info@afiyamed.com</a>
                             </li>
                         </ul>
                     </div>
@@ -99,6 +99,10 @@ export function Footer() {
                         &copy; {new Date().getFullYear()} Al Afiya Medical Supplies LLC. All rights reserved.
                     </p>
                     <div className="flex space-x-5">
+                        <a href="mailto:info@afiyamed.com" className="p-2 rounded-full bg-white/5 hover:bg-[#3AABB8] text-white/70 hover:text-white transition-all transform hover:-translate-y-1">
+                            <span className="sr-only">Email</span>
+                            <Mail className="w-4 h-4" />
+                        </a>
                         <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-[#3AABB8] text-white/70 hover:text-white transition-all transform hover:-translate-y-1">
                             <span className="sr-only">LinkedIn</span>
                             <Linkedin className="w-4 h-4" />

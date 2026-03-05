@@ -40,20 +40,20 @@ export default function ContactPage() {
                         <div className="space-y-8">
                             {/* Info Cards */}
                             <div className="grid sm:grid-cols-2 gap-4">
-                                <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300">
+                                <a href="tel:971503074484" className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300 block">
                                     <div className="w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-2xl flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
                                         <PhoneCall className="w-5 h-5" />
                                     </div>
                                     <h3 className="font-bold text-[#0B3D54] mb-2 text-[16px]">Call Us</h3>
-                                    <a href="tel:+971000000000" className="text-[#4A6870] hover:text-[#267D91] text-[15px] transition-colors font-medium">+971 00 000 0000</a>
-                                </div>
-                                <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300">
+                                    <span className="text-[#4A6870] group-hover:text-[#267D91] text-[15px] transition-colors font-medium">971 50 307 4484</span>
+                                </a>
+                                <a href="mailto:info@afiyamed.com" className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300 block">
                                     <div className="w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-2xl flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
                                         <Mail className="w-5 h-5" />
                                     </div>
                                     <h3 className="font-bold text-[#0B3D54] mb-2 text-[16px]">Email Us</h3>
-                                    <a href="mailto:info@alafiyamed.com" className="text-[#4A6870] hover:text-[#267D91] text-[15px] transition-colors font-medium">info@alafiyamed.com</a>
-                                </div>
+                                    <span className="text-[#4A6870] group-hover:text-[#267D91] text-[15px] transition-colors font-medium">info@afiyamed.com</span>
+                                </a>
                             </div>
 
                             <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300 relative overflow-hidden">
@@ -108,7 +108,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <label className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">PHONE NUMBER</label>
-                                        <input type="tel" className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="+971 50 000 0000" />
+                                        <input type="tel" className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="971 50 307 4484" />
                                     </div>
                                 </div>
                                 <div>
