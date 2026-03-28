@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PhoneCall, Mail, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-
+import FAQAccordion from "./FAQAccordion";
 export const metadata: Metadata = {
     title: "Contact Us | Al Afiya Medical Supplies",
     description: "Get in touch with our team for sales inquiries, custom procurement, or general questions.",
@@ -78,7 +78,8 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-
+                            {/* FAQ Accordion Section */}
+                            <FAQAccordion />
                         </div>
 
                         {/* Contact Form */}
