@@ -173,7 +173,7 @@ export default function AboutClient() {
                             <div className="absolute inset-0 bg-gradient-to-tr from-[#164B5F]/20 to-[#2BA8B8]/30 rounded-[32px] blur-2xl transform translate-y-4"></div>
                             <div className="relative bg-white rounded-[32px] p-2 shadow-2xl border border-white/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]">
                                 <Image
-                                    src="/about-image.png"
+                                    src="/about-image.webp"
                                     alt="Healthcare Innovation"
                                     width={800}
                                     height={600}

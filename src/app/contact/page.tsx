@@ -14,11 +14,31 @@ export default function ContactPage() {
             <section className="relative overflow-hidden bg-[#0B3D54] pt-32 pb-20 lg:pt-40 lg:pb-28 flex flex-col justify-center text-white border-b border-[#1D6375]">
                 <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0B3D54] via-[#124D64] to-[#1D6375]"></div>
-                    {/* Concentric expanding rings animation */}
-                    <div className="absolute w-[800px] h-[800px] border-[2px] border-[#3AABB8]/40 rounded-full animate-[ping_8s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                    <div className="absolute w-[600px] h-[600px] border-[2px] border-[#A8D8DF]/40 rounded-full animate-[ping_8s_cubic-bezier(0,0,0.2,1)_infinite_2s]"></div>
-                    <div className="absolute w-[400px] h-[400px] border-[2px] border-[#3AABB8]/50 rounded-full animate-[ping_8s_cubic-bezier(0,0,0.2,1)_infinite_4s]"></div>
-                    <div className="w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(42,138,158,0.3)_0%,transparent_70%)] relative z-10"></div>
+                    
+                    {/* Droplet Water Ripple Animation */}
+                    <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none z-10">
+                        {/* 5 concentric circles representing rippling water lines */}
+                        {[0, 1.5, 3, 4.5, 6].map((delay, i) => (
+                            <div 
+                                key={i}
+                                className="absolute w-[100px] h-[100px] border border-[#A8D8DF] rounded-full will-change-transform transform-gpu mix-blend-screen"
+                                style={{
+                                    animation: `waterDropRipple 7.5s cubic-bezier(0.1, 0.4, 0.8, 1) infinite`,
+                                    animationDelay: `${delay}s`,
+                                    opacity: 0,
+                                }}
+                            />
+                        ))}
+                    </div>
+
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                        @keyframes waterDropRipple {
+                            0% { transform: scale(0.1); opacity: 0.25; border-width: 2px; }
+                            100% { transform: scale(20); opacity: 0; border-width: 0px; }
+                        }
+                        `
+                    }} />
                 </div>
 
                 <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pointer-events-auto">

@@ -62,7 +62,7 @@ export default function ProductsPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {categories.map((cat) => (
-                            <Link key={cat.id} href={`/products/${cat.id}`} className="group relative bg-white/60 backdrop-blur-xl rounded-[24px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(38,125,145,0.15)] transition-all duration-500 border border-white hover:border-[#3AABB8]/30 hover:-translate-y-2 overflow-hidden flex flex-col h-full">
+                            <div key={cat.id} className="group relative bg-white/60 backdrop-blur-xl rounded-[24px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(38,125,145,0.15)] transition-all duration-500 border border-white hover:border-[#3AABB8]/30 hover:-translate-y-2 overflow-hidden flex flex-col h-full cursor-default">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#A8D8DF]/40 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-700"></div>
 
                                 <div className="relative z-10 flex-grow flex flex-col">
@@ -73,7 +73,7 @@ export default function ProductsPage() {
                                     <p className="text-[14px] text-[#4A6870] leading-relaxed mb-6 flex-grow">{cat.desc}</p>
 
                                 </div>
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -9,12 +9,12 @@ export function HexagonWave() {
     const hexGrid = Array.from({ length: 24 });
 
     return (
-        <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center opacity-60">
-            <div className="relative w-[150%] h-[150%] flex flex-wrap justify-center items-center gap-2 transform -rotate-12 scale-125">
+        <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center opacity-60 pointer-events-none">
+            <div className="relative w-[150vw] h-[150vh] flex flex-wrap justify-center items-center gap-2 sm:gap-3 transform -rotate-12 scale-110 sm:scale-125">
                 {hexGrid.map((_, i) => (
                     <div
                         key={i}
-                        className="relative w-24 h-28 border-[3px] border-[#3AABB8] flex justify-center items-center backdrop-blur-sm"
+                        className={`relative w-20 h-24 sm:w-24 sm:h-28 border-[2px] sm:border-[3px] border-[#3AABB8] justify-center items-center backdrop-blur-sm will-change-transform ${i % 2 !== 0 ? 'hidden md:flex' : 'flex'}`}
                         style={{
                             clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                             animation: `hexFloat 8s ease-in-out infinite`,
@@ -56,11 +56,11 @@ export function FloatingMolecules() {
 
     return (
         <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center perspective-[1200px] opacity-80">
-            <div className="relative w-full h-full transform-style-3d animate-[rotateSpace_35s_linear_infinite]">
+            <div className="relative w-full h-full transform-style-3d animate-[rotateSpace_35s_linear_infinite] will-change-transform">
                 {nodes.map((node, i) => (
                     <div
                         key={i}
-                        className="absolute w-8 h-8 bg-[#A8D8DF] rounded-full shadow-[0_0_30px_#A8D8DF] flex items-center justify-center backdrop-blur-md"
+                        className={`absolute w-6 h-6 sm:w-8 sm:h-8 bg-[#A8D8DF] rounded-full shadow-[0_0_20px_#A8D8DF] sm:shadow-[0_0_30px_#A8D8DF] items-center justify-center backdrop-blur-md will-change-transform ${i > 4 ? 'hidden md:flex' : 'flex'}`}
                         style={{
                             left: node.left,
                             top: node.top,
@@ -102,11 +102,11 @@ export function DynamicDataPulse() {
     const lines = Array.from({ length: 12 });
 
     return (
-        <div className="absolute inset-0 z-0 overflow-hidden flex flex-col justify-evenly opacity-90 mix-blend-screen scale-125 transform -rotate-12">
+        <div className="absolute inset-0 z-0 overflow-hidden flex flex-col justify-evenly opacity-90 mix-blend-screen scale-110 sm:scale-125 transform -rotate-12 pointer-events-none">
             {lines.map((_, i) => (
-                <div key={i} className="relative w-full h-[2px] bg-[#1D6375]/40">
+                <div key={i} className={`relative w-full h-[2px] bg-[#1D6375]/40 ${i % 2 !== 0 ? 'hidden md:block' : 'block'}`}>
                     <div 
-                        className="absolute top-0 bottom-0 w-[40%] bg-gradient-to-r from-transparent via-[#A8D8DF] to-transparent shadow-[0_0_25px_#A8D8DF]"
+                        className="absolute top-0 bottom-0 w-[40%] bg-gradient-to-r from-transparent via-[#A8D8DF] to-transparent shadow-[0_0_20px_#A8D8DF] will-change-transform"
                         style={{
                             animation: `scanLine 3s ease-in-out infinite`,
                             animationDelay: `${(i % 4) * 0.8}s`
