@@ -91,15 +91,26 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Partners & Stats */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0B3D54] to-[#1D6375] pt-16 pb-8 lg:pt-20 lg:pb-10 flex flex-col justify-center">
+      <section className="relative overflow-hidden pt-16 pb-8 lg:pt-20 lg:pb-10 flex flex-col justify-center bg-[#0B3D54]">
 
-        {/* Subtle Lighting Effects Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          {/* Glass Specular Highlight */}
-          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+        {/* Cinematic Video Background Layer */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#0B3D54]">
+          {/* Video Element */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-luminosity"
+          >
+            <source src="/bg-video.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Medium gradient overlay to let the video shine through while keeping text readable */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B3D54]/80 via-[#124D64]/70 to-[#1D6375]/80"></div>
         </div>
 
-        <div className="flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-4 lg:mb-8">
+        <div className="flex-grow flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full mb-4 lg:mb-8 pointer-events-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
 
             {/* Text Content Area */}
@@ -109,8 +120,9 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-center lg:text-left order-2 lg:order-1"
             >
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-[1.15] tracking-tight drop-shadow-lg">
-                A Culture of Caring,<br />A Legacy of Quality
+              <h1 className="text-4xl sm:text-5xl md:text-6xl text-white mb-5 leading-[1.1] tracking-tight drop-shadow-2xl" style={{ fontFamily: "var(--font-playfair), serif" }}>
+                <span className="font-light italic text-white">A Culture of Caring,</span><br />
+                <span className="font-semibold">A Legacy of Quality</span>
               </h1>
               <p className="text-base md:text-lg text-[#D6E9EC] mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
                 Critical medical and surgical supplies delivered across the UAE & GCC with unmatched logistics reliability. Empowering facilities of all sizes.

@@ -35,14 +35,54 @@ export default function ServicesPage() {
         <div className="flex flex-col min-h-screen font-sans bg-[#F4FBFC]">
             {/* HERO SECTION - Unique Services Styling (Dynamic/Movement) */}
             <section className="relative overflow-hidden bg-[#0B3D54] pt-32 pb-20 lg:pt-40 lg:pb-28 flex flex-col justify-center text-white border-b border-[#3AABB8]/20">
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    {/* Diagonal light sweeps representing logistics and motion */}
-                    <div className="absolute top-[-50%] left-[-10%] w-[150%] h-[100%] bg-gradient-to-r from-transparent via-[#1D6375]/40 to-transparent transform -rotate-12 blur-2xl"></div>
-                    <div className="absolute bottom-[-20%] right-[-10%] w-[80%] h-[50%] bg-gradient-to-l from-[#2A8A9E]/20 to-transparent transform rotate-12 blur-3xl"></div>
-                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-[#1D6375] via-[#3AABB8]/50 to-transparent"></div>
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0B3D54] to-[#124D64]"></div>
+                    
+                    {/* Professional Abstract ECG Monitor Background */}
+                    <div className="absolute inset-0 z-0 overflow-hidden opacity-50 flex items-center justify-center">
+                        <div className="relative w-[200%] h-[300px] flex items-center">
+                            {/* Medical Graph Paper Fade */}
+                            <div className="absolute inset-0 bg-[linear-gradient(rgba(58,171,184,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(58,171,184,0.15)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
+
+                            {/* Animated Primary ECG Pulse */}
+                            <svg className="absolute w-full h-full text-[#A8D8DF] animate-[pulseSweep_8s_linear_infinite]" viewBox="0 0 1000 200" fill="none" preserveAspectRatio="none">
+                                <path 
+                                    d="M0,100 L400,100 L410,90 L420,100 L430,100 L435,115 L445,10 L455,160 L465,100 L480,100 L490,80 L505,100 L1000,100"
+                                    stroke="currentColor" 
+                                    strokeWidth="2" 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                    className="filter drop-shadow-[0_0_10px_rgba(168,216,223,0.8)]"
+                                />
+                            </svg>
+                            {/* Secondary Phantom Pulse */}
+                            <svg className="absolute w-full h-full text-[#3AABB8] animate-[pulseSweep_12s_linear_infinite_4s] opacity-50" viewBox="0 0 1000 200" fill="none" preserveAspectRatio="none">
+                                <path 
+                                    d="M0,100 L200,100 L210,95 L220,100 L230,100 L235,110 L245,30 L255,130 L265,100 L280,100 L290,85 L300,100 L1000,100"
+                                    stroke="currentColor" 
+                                    strokeWidth="1" 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                        @keyframes pulseSweep {
+                            0% { transform: translateX(50%); opacity: 0; }
+                            10% { opacity: 1; }
+                            90% { opacity: 1; }
+                            100% { transform: translateX(-50%); opacity: 0; }
+                        }
+                        `
+                    }} />
+
+                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-[#1D6375] via-[#3AABB8]/30 to-transparent z-0"></div>
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-[12px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
                         Capabilities
                     </h2>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { DM_Sans, DM_Serif_Display, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -15,6 +15,14 @@ const dmSerif = DM_Serif_Display({
   variable: "--font-dm-serif",
   subsets: ["latin"],
   weight: ["400"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 export const metadata: Metadata = {
@@ -91,7 +99,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSans.variable} ${dmSerif.variable} font-sans antialiased min-h-screen flex flex-col bg-[#F0F7F9] text-[#1C2B30] dark:bg-[#F0F7F9] dark:text-[#1C2B30]`}
+        className={`${dmSans.variable} ${dmSerif.variable} ${playfair.variable} font-sans antialiased min-h-screen flex flex-col bg-[#F0F7F9] text-[#1C2B30] dark:bg-[#F0F7F9] dark:text-[#1C2B30]`}
       >
         <Navigation />
         <main className="flex-grow">

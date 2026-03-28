@@ -5,7 +5,6 @@ import {
     Phone,
     Mail,
     Linkedin,
-    Twitter,
     ChevronRight,
     Building2,
     Microscope,
@@ -79,15 +78,15 @@ export function Footer() {
                         <ul className="space-y-1 text-[13px] text-[#D6E9EC]">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-[#3AABB8] shrink-0 mt-0.5" />
-                                <span>United Arab Emirates,<br />Sultanate of Oman </span>
+                                <span>United Arab Emirates<br />Sultanate of Oman </span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-[#3AABB8] shrink-0" />
-                                <a href="tel:971503074484" className="hover:text-[#3AABB8] transition-colors">971 50 307 4484</a>
+                                <a href="tel:+971503074484" className="hover:text-[#3AABB8] transition-colors">+971 50 307 4484</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-4 h-4 text-[#3AABB8] shrink-0" />
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yourname@example.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#3AABB8] transition-colors">info@alafiyamed.com</a>
+                                <a href="mailto:info@afiyamed.com" className="hover:text-[#3AABB8] transition-colors">info@afiyamed.com</a>
                             </li>
                         </ul>
                     </div>
@@ -103,13 +102,9 @@ export function Footer() {
                             <span className="sr-only">Email</span>
                             <Mail className="w-4 h-4" />
                         </a>
-                        <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-[#3AABB8] text-white/70 hover:text-white transition-all transform hover:-translate-y-1">
+                        <a href="https://www.linkedin.com/company/afiyamed" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-[#3AABB8] text-white/70 hover:text-white transition-all transform hover:-translate-y-1">
                             <span className="sr-only">LinkedIn</span>
                             <Linkedin className="w-4 h-4" />
-                        </a>
-                        <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-[#3AABB8] text-white/70 hover:text-white transition-all transform hover:-translate-y-1">
-                            <span className="sr-only">Twitter</span>
-                            <Twitter className="w-4 h-4" />
                         </a>
                     </div>
                 </div>

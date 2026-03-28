@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Stethoscope, Microscope, Scissors, Pill } from "lucide-react";
+import { Stethoscope, Microscope, Scissors, Pill, Activity, HeartPulse, Shield, ShieldPlus, Droplet, Archive, Apple, Eye } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Our Products | Al Afiya Medical Supplies",
@@ -13,19 +13,36 @@ export default function ProductsPage() {
         { id: "laboratory-supplies", name: "Laboratory Supplies", icon: Microscope, desc: "Reagents, glassware, and precision laboratory instruments." },
         { id: "surgical-consumables", name: "Surgical Consumables", icon: Scissors, desc: "Sterile instruments, drapes, sutures, and protective wear." },
         { id: "pharmacy-essentials", name: "Pharmacy Essentials", icon: Pill, desc: "Storage solutions, dispensing tools, and point-of-care products." },
+        { id: "dental-consumables", name: "Dental Consumables", icon: Activity, desc: "Comprehensive range of high-quality dental supplies and instruments." },
+        { id: "medical-consumables", name: "Medical Consumables", icon: HeartPulse, desc: "Everyday medical supplies for hospitals, clinics, and care centers." },
+        { id: "radiation-protection", name: "Radiation Protection", icon: Shield, desc: "Specialized gear and shielding for radiology and imaging spaces." },
+        { id: "ppe", name: "PPE", icon: ShieldPlus, desc: "Personal protective equipment ensuring safety and compliance." },
+        { id: "wound-care", name: "Wound Care", icon: Droplet, desc: "Advanced dressings, bandages, and healing aids for patient care." },
+        { id: "cssd", name: "CSSD Consumables & Equipment", icon: Archive, desc: "Central sterile services department supplies for complete sterilization." },
+        { id: "nutrition", name: "Nutrition & Supplements", icon: Apple, desc: "Clinical nutrition solutions and specialized health supplements." },
+        { id: "infection-control", name: "Infection Control", icon: Shield, desc: "Sanitization, disinfection, and preventative control measures." },
+        { id: "physiotherapy", name: "Physiotherapy & Rehab", icon: Activity, desc: "Equipment and consumables for physical therapy and recovery." },
+        { id: "endoscopy", name: "Endoscopy Consumables", icon: Eye, desc: "Specialized accessories and tools for endoscopic procedures." },
     ];
 
     return (
         <div className="flex flex-col min-h-screen font-sans bg-[#F4FBFC]">
             {/* HERO SECTION - Unique Products Styling */}
             <section className="relative overflow-hidden bg-gradient-to-br from-[#0B3D54] via-[#164D5C] to-[#1D6375] pt-32 pb-20 lg:pt-40 lg:pb-28 flex flex-col justify-center text-white border-b border-white/10">
-                <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                    {/* Subtle grid pattern to represent inventory/products */}
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBNMzkuNSAwdi00MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==')] opacity-50"></div>
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0B3D54] via-[#164D5C] to-[#1D6375] opacity-90 z-0"></div>
+
+                    {/* Animated Geometric Flow / Wave pattern */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                        <div className="w-[120%] h-[120%] border-[2px] border-[#3AABB8] rounded-[40%] animate-[spin_20s_linear_infinite] absolute mix-blend-overlay"></div>
+                        <div className="w-[110%] h-[110%] border-[2px] border-[#A8D8DF] rounded-[35%] animate-[spin_25s_linear_infinite_reverse] absolute mix-blend-overlay"></div>
+                        <div className="w-[100%] h-[100%] border-[2px] border-[#1D6375] rounded-[45%] animate-[spin_30s_linear_infinite] absolute mix-blend-overlay"></div>
+                    </div>
+
+                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent z-10"></div>
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pointer-events-auto">
                     <h2 className="text-[12px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
                         Portfolio
                     </h2>
@@ -54,12 +71,7 @@ export default function ProductsPage() {
                                     </div>
                                     <h2 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">{cat.name}</h2>
                                     <p className="text-[14px] text-[#4A6870] leading-relaxed mb-6 flex-grow">{cat.desc}</p>
-                                    <div className="text-[13px] font-bold text-[#2A8A9E] group-hover:text-[#0B3D54] inline-flex items-center group/btn mt-auto">
-                                        Explore Catalog
-                                        <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
-                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                                        </span>
-                                    </div>
+
                                 </div>
                             </Link>
                         ))}
