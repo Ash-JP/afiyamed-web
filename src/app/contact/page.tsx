@@ -52,7 +52,7 @@ export default function ContactPage() {
                                     <h3 className="font-bold text-[#0B3D54] mb-2 text-[16px]">Call Us</h3>
                                     <span className="text-[#4A6870] group-hover:text-[#267D91] text-[15px] transition-colors font-medium">+971 50 307 4484</span>
                                 </a>
-                                <a href="mailto:info@afiyamed.com" className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300 block">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@afiyamed.com" target="_blank" rel="noopener noreferrer" className="group bg-white/60 backdrop-blur-xl p-8 rounded-[24px] border border-white hover:border-[#3AABB8]/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgba(38,125,145,0.1)] transition-all duration-300 block">
                                     <div className="w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-2xl flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
                                         <Mail className="w-5 h-5" />
                                     </div>
