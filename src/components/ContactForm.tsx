@@ -60,9 +60,9 @@ export default function ContactForm() {
             // Revert back to idle after 5 seconds automatically
             setTimeout(() => setStatus("idle"), 5000);
 
-        } catch (error: any) {
+        } catch (error: unknown) {
             setStatus("error");
-            setErrorMessage(error.message || "An unexpected error occurred. Please try again.");
+            setErrorMessage(error instanceof Error ? error.message : "An unexpected error occurred. Please try again.");
         }
     };
 

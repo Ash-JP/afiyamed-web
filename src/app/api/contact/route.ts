@@ -68,7 +68,7 @@ export async function POST(request: Request) {
         }
 
         return NextResponse.json({ success: true, data });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("Internal API Error:", error);
         return NextResponse.json({ error: "Failed to send email. Please try again later." }, { status: 500 });
     }

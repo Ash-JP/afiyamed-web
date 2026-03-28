@@ -1,13 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+
 
 // Option 1: 3D HEXAGON WAVE
 export function HexagonWave() {
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
 
-    if (!mounted) return null;
 
     const hexGrid = Array.from({ length: 24 });
 
@@ -43,10 +40,7 @@ export function HexagonWave() {
 
 // Option 2: 3D MOLECULAR NETWORK
 export function FloatingMolecules() {
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
 
-    if (!mounted) return null;
 
     // Use deterministic positions for hydration safety
     const nodes = [
@@ -103,10 +97,7 @@ export function FloatingMolecules() {
 
 // Option 3: DYNAMIC DATA PULSE (ECG / Scanning Lines)
 export function DynamicDataPulse() {
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
 
-    if (!mounted) return null;
 
     const lines = Array.from({ length: 12 });
 
