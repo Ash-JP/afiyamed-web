@@ -83,13 +83,13 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-[12px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
+                    <h2 className="text-[14px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
                         Capabilities
                     </h2>
                     <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl mb-6 leading-[1.15] tracking-tight drop-shadow-lg">
                         Our Services
                     </h1>
-                    <p className="text-base md:text-xl text-[#D6E9EC] mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+                    <p className="text-lg md:text-xl text-[#D6E9EC] mb-8 leading-relaxed max-w-3xl mx-auto font-light">
                         Beyond distribution. We provide end-to-end supply chain integration tailored to the demands of modern healthcare facilities.
                     </p>
                 </div>
@@ -112,10 +112,10 @@ export default function ServicesPage() {
 
                                 <div className="flex-grow text-center md:text-left z-10">
                                     <h2 className="text-2xl lg:text-3xl font-bold text-[#0B3D54] mb-4 group-hover:text-[#267D91] transition-colors">{service.title}</h2>
-                                    <p className="text-[15px] lg:text-[16px] text-[#4A6870] leading-relaxed mb-8 max-w-3xl">
+                                    <p className="text-[17px] lg:text-lg text-[#4A6870] leading-relaxed mb-8 max-w-3xl">
                                         {service.desc}
                                     </p>
-                                    <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3.5 border border-[#3AABB8] text-[#1D6375] font-bold text-[14px] rounded-full hover:bg-gradient-to-r hover:from-[#1D6375] hover:to-[#2A8A9E] hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_20px_rgba(42,138,158,0.2)] hover:-translate-y-0.5 group/btn">
+                                    <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3.5 border border-[#3AABB8] text-[#1D6375] font-bold text-[16px] rounded-full hover:bg-gradient-to-r hover:from-[#1D6375] hover:to-[#2A8A9E] hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_20px_rgba(42,138,158,0.2)] hover:-translate-y-0.5 group/btn">
                                         Inquire About This Service
                                         <span className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
                                     </Link>

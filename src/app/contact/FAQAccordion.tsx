@@ -47,7 +47,7 @@ export default function FAQAccordion() {
                                 onClick={() => toggleAccordion(index)}
                                 className="w-full text-left flex justify-between items-start py-2 focus:outline-none group"
                             >
-                                <span className="font-bold text-[#0B3D54] text-[15px] group-hover:text-[#3AABB8] transition-colors pr-6 mt-1">
+                                <span className="font-bold text-[#0B3D54] text-[17px] group-hover:text-[#3AABB8] transition-colors pr-6 mt-1">
                                     {faq.question}
                                 </span>
                                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white border border-[#D6E9EC] shadow-sm group-hover:border-[#3AABB8] group-hover:bg-[#EBF5F8] flex items-center justify-center transition-all duration-300">
@@ -67,7 +67,7 @@ export default function FAQAccordion() {
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <p className="pt-2 pb-2 text-[#4A6870] text-[14px] leading-relaxed">
+                                        <p className="pt-2 pb-2 text-[#4A6870] text-[16px] leading-relaxed">
                                             {faq.answer}
                                         </p>
                                     </motion.div>

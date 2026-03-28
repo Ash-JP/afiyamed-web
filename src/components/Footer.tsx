@@ -29,7 +29,7 @@ export function Footer() {
                                 className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] w-[120px] dark:brightness-0 dark:invert"
                             />
                         </Link>
-                        <p className="mt-2 text-[12px] text-[#A8D8DF] leading-relaxed">
+                        <p className="mt-2 text-[14px] text-[#A8D8DF] leading-relaxed">
                             Leading medical equipment and consumables distributor in the Middle East. Over 9 years of excellence in serving healthcare professionals.
                         </p>
                     </div>
@@ -44,7 +44,7 @@ export function Footer() {
                                 { name: "Services", path: "/services" },
                             ].map((link) => (
                                 <li key={link.name}>
-                                    <Link href={link.path} className="text-[13px] text-[#D6E9EC] hover:text-[#3AABB8] transition-colors flex items-center group">
+                                    <Link href={link.path} className="text-[15px] text-[#D6E9EC] hover:text-[#3AABB8] transition-colors flex items-center group">
                                         <ChevronRight className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                                         {link.name}
                                     </Link>
@@ -57,16 +57,16 @@ export function Footer() {
                     <div>
                         <h3 className="text-xs font-semibold tracking-wider text-white uppercase mb-2">Industries Served</h3>
                         <ul className="space-y-1">
-                            <li className="text-[14px] text-[#D6E9EC] flex items-center gap-2.5">
+                            <li className="text-[16px] text-[#D6E9EC] flex items-center gap-2.5">
                                 <Building2 className="w-4 h-4 text-[#3AABB8]" /> Hospitals & Clinics
                             </li>
-                            <li className="text-[14px] text-[#D6E9EC] flex items-center gap-2.5">
+                            <li className="text-[16px] text-[#D6E9EC] flex items-center gap-2.5">
                                 <Microscope className="w-4 h-4 text-[#3AABB8]" /> Diagnostic Labs
                             </li>
-                            <li className="text-[14px] text-[#D6E9EC] flex items-center gap-2.5">
+                            <li className="text-[16px] text-[#D6E9EC] flex items-center gap-2.5">
                                 <Stethoscope className="w-4 h-4 text-[#3AABB8]" /> Pharmacies
                             </li>
-                            <li className="text-[14px] text-[#D6E9EC] flex items-center gap-2.5">
+                            <li className="text-[16px] text-[#D6E9EC] flex items-center gap-2.5">
                                 <FlaskConical className="w-4 h-4 text-[#3AABB8]" /> Research Centers
                             </li>
                         </ul>
@@ -75,7 +75,7 @@ export function Footer() {
                     {/* Contact Info */}
                     <div>
                         <h3 className="text-xs font-semibold tracking-wider text-white uppercase mb-2">Contact Us</h3>
-                        <ul className="space-y-1 text-[13px] text-[#D6E9EC]">
+                        <ul className="space-y-1 text-[15px] text-[#D6E9EC]">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-[#3AABB8] shrink-0 mt-0.5" />
                                 <span>United Arab Emirates<br />Sultanate of Oman </span>
@@ -94,7 +94,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="mt-5 border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center gap-3">
-                    <p className="text-[12px] text-[#A8D8DF]">
+                    <p className="text-[14px] text-[#A8D8DF]">
                         &copy; {new Date().getFullYear()} Al Afiya Medical Supplies LLC. All rights reserved.
                     </p>
                     <div className="flex space-x-5">

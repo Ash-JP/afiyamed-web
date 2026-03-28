@@ -124,14 +124,14 @@ export default function Home() {
                 <span className="font-light italic text-white">A Culture of Caring,</span><br />
                 <span className="font-semibold">A Legacy of Quality</span>
               </h1>
-              <p className="text-base md:text-lg text-[#D6E9EC] mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+              <p className="text-lg md:text-lg text-[#D6E9EC] mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
                 Critical medical and surgical supplies delivered across the UAE & GCC with unmatched logistics reliability. Empowering facilities of all sizes.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                 <Link href="/products" className="group relative overflow-hidden rounded-full p-px shadow-[0_0_30px_rgba(58,171,184,0.3)] hover:shadow-[0_0_40px_rgba(58,171,184,0.5)] transition-all duration-300">
                   <span className="absolute inset-0 bg-gradient-to-r from-[#A8D8DF] via-[#3AABB8] to-[#1D6375] opacity-70 group-hover:opacity-100 transition-opacity"></span>
                   <div className="relative bg-[#0B3D54] group-hover:bg-transparent px-8 py-4 rounded-full transition-all duration-300">
-                    <span className="text-white font-semibold text-[15px] flex items-center gap-2">
+                    <span className="text-white font-semibold text-[17px] flex items-center gap-2">
                       Explore Products
                       <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </span>
@@ -168,7 +168,7 @@ export default function Home() {
         >
           {/* Section Header */}
           <div className="text-center mb-8">
-            <p className="text-[14px] font-semibold tracking-[0.3em] uppercase text-[#A8D8DF]/70">Trusted By Global Healthcare Brands</p>
+            <p className="text-[16px] font-semibold tracking-[0.3em] uppercase text-[#A8D8DF]/70">Trusted By Global Healthcare Brands</p>
           </div>
 
           {/* Infinite Scrolling Carousel — Single Row */}
@@ -226,7 +226,7 @@ export default function Home() {
               >
                 <p className="text-4xl font-serif text-[#0B3D54] font-bold mb-2">{value}</p>
                 <Icon className="w-5 h-5 text-[#3AABB8] mb-2 group-hover:scale-110 transition-transform duration-300" />
-                <p className="text-[11px] text-[#4A6870] font-bold uppercase tracking-[0.2em] text-center">{label}</p>
+                <p className="text-[12px] text-[#4A6870] font-bold uppercase tracking-[0.2em] text-center">{label}</p>
               </motion.div>
             ))}
           </div>
@@ -255,9 +255,9 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4 drop-shadow-sm">Core Values</h2>
+              <h2 className="text-[12px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4 drop-shadow-sm">Core Values</h2>
               <h3 className="text-2xl md:text-4xl font-serif text-[#0B3D54] mb-4 leading-tight">Why Healthcare Leaders Choose <br />Al Afiya</h3>
-              <p className="text-[15px] text-[#4A6870] leading-relaxed mb-6 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
+              <p className="text-[17px] text-[#4A6870] leading-relaxed mb-6 font-light">We recognize that in healthcare, logistics is directly tied to life-saving outcomes. Our infrastructure is built solely around undeniable reliability and compliance.</p>
 
               <ul className="space-y-3">
                 <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
@@ -265,8 +265,8 @@ export default function Home() {
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 tracking-tight">Uncompromising Compliance</h4>
-                    <p className="text-[14px] text-[#4A6870] leading-relaxed">We distribute exclusively from globally recognized, ISO-certified manufacturing partners.</p>
+                    <h4 className="text-lg font-bold text-[#0B3D54] mb-2 tracking-tight">Uncompromising Compliance</h4>
+                    <p className="text-[16px] text-[#4A6870] leading-relaxed">We distribute exclusively from globally recognized, ISO-certified manufacturing partners.</p>
                   </div>
                 </li>
                 <li className="flex items-start bg-white/50 backdrop-blur-md p-4 rounded-[16px] shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-[#D6E9EC] hover:border-[#A8D8DF] transition-colors">
@@ -274,8 +274,8 @@ export default function Home() {
                     <Truck className="w-6 h-6" />
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 tracking-tight">Dynamic Supply Chain</h4>
-                    <p className="text-[14px] text-[#4A6870] leading-relaxed">Optimized central warehousing ensures rapid deployment of critical items immediately.</p>
+                    <h4 className="text-lg font-bold text-[#0B3D54] mb-2 tracking-tight">Dynamic Supply Chain</h4>
+                    <p className="text-[16px] text-[#4A6870] leading-relaxed">Optimized central warehousing ensures rapid deployment of critical items immediately.</p>
                   </div>
                 </li>
               </ul>
@@ -305,19 +305,19 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 relative z-10">
                   <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <Building2 className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Hospitals</span>
+                    <span className="text-white text-[15px] font-medium tracking-wide">Hospitals</span>
                   </div>
                   <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <Stethoscope className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Clinics</span>
+                    <span className="text-white text-[15px] font-medium tracking-wide">Clinics</span>
                   </div>
                   <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <FlaskConical className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Diag. Labs</span>
+                    <span className="text-white text-[15px] font-medium tracking-wide">Diag. Labs</span>
                   </div>
                   <div className="bg-gradient-to-b from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 rounded-[16px] p-4 flex flex-col items-center justify-center text-center backdrop-blur-lg group shadow-[inset_0_1px_rgba(255,255,255,0.1)]">
                     <Pill className="w-8 h-8 text-[#A8D8DF] mb-4 transform group-hover:scale-110 group-hover:-translate-y-1 transition-all" />
-                    <span className="text-white text-[13px] font-medium tracking-wide">Pharmacies</span>
+                    <span className="text-white text-[15px] font-medium tracking-wide">Pharmacies</span>
                   </div>
                 </div>
               </div>
@@ -342,7 +342,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="text-center mb-8"
           >
-            <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Portfolio Focus</h2>
+            <h2 className="text-[12px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Portfolio Focus</h2>
             <h3 className="text-3xl md:text-5xl font-serif text-[#0B3D54] max-w-2xl mx-auto leading-tight">Engineered for Every Clinical Environment</h3>
           </motion.div>
 
@@ -362,8 +362,8 @@ export default function Home() {
                   <HeartPulse className="w-6 h-6 text-[#267D91]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">Clinical Equipment</h4>
-                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-5">Heavy-duty imaging, monitoring, and diagnostic hardware constructed for modern hospital wards.</p>
-                <Link href="/products" className="text-[13px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
+                <p className="text-[16px] text-[#4A6870] leading-relaxed mb-5">Heavy-duty imaging, monitoring, and diagnostic hardware constructed for modern hospital wards.</p>
+                <Link href="/products" className="text-[15px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
                   View Category
                   <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -387,8 +387,8 @@ export default function Home() {
                   <Microscope className="w-6 h-6 text-[#267D91]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">Laboratory Supplies</h4>
-                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-5">High-precision instrumentation, sterile reagents, and glassware dedicated to diagnostic centers.</p>
-                <Link href="/products" className="text-[13px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
+                <p className="text-[16px] text-[#4A6870] leading-relaxed mb-5">High-precision instrumentation, sterile reagents, and glassware dedicated to diagnostic centers.</p>
+                <Link href="/products" className="text-[15px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
                   View Category
                   <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -412,8 +412,8 @@ export default function Home() {
                   <Scissors className="w-6 h-6 text-[#267D91]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">Surgical Consumables</h4>
-                <p className="text-[14px] text-[#4A6870] leading-relaxed mb-5">Sterile drapes, rapid-deploy sutures, and specialized protective wear for high-stakes procedures.</p>
-                <Link href="/products" className="text-[13px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
+                <p className="text-[16px] text-[#4A6870] leading-relaxed mb-5">Sterile drapes, rapid-deploy sutures, and specialized protective wear for high-stakes procedures.</p>
+                <Link href="/products" className="text-[15px] font-bold text-[#2A8A9E] hover:text-[#0B3D54] inline-flex items-center group/btn">
                   View Category
                   <span className="w-6 h-6 ml-2 rounded-full bg-[#EBF5F8] flex items-center justify-center group-hover/btn:bg-[#3AABB8] group-hover/btn:text-white transition-colors">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -446,11 +446,11 @@ export default function Home() {
           className="max-w-3xl mx-auto px-4 text-center relative z-10"
         >
           <h2 className="text-4xl md:text-5xl font-serif text-[#0B3D54] mb-5 drop-shadow-sm">Equally Dedicated to Your Success.</h2>
-          <p className="text-[#4A6870] text-[16px] md:text-lg mb-10 max-w-xl mx-auto font-light leading-relaxed">
+          <p className="text-[#4A6870] text-lg md:text-lg mb-10 max-w-xl mx-auto font-light leading-relaxed">
             Whether outfitting a new surgical wing or ensuring daily consumable flow, let&apos;s architect a solid supply framework together.
           </p>
           <div className="flex justify-center">
-            <Link href="/contact" className="group bg-gradient-to-r from-[#1D6375] to-[#2A8A9E] hover:from-[#0B3D54] hover:to-[#1D6375] text-white px-10 py-5 rounded-full font-bold text-[15px] transition-all shadow-[0_10px_30px_rgba(42,138,158,0.25)] hover:shadow-[0_15px_40px_rgba(42,138,158,0.35)] hover:-translate-y-1 flex items-center gap-3">
+            <Link href="/contact" className="group bg-gradient-to-r from-[#1D6375] to-[#2A8A9E] hover:from-[#0B3D54] hover:to-[#1D6375] text-white px-10 py-5 rounded-full font-bold text-[17px] transition-all shadow-[0_10px_30px_rgba(42,138,158,0.25)] hover:shadow-[0_15px_40px_rgba(42,138,158,0.35)] hover:-translate-y-1 flex items-center gap-3">
               Initiate Consultation
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>

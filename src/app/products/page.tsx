@@ -43,13 +43,13 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pointer-events-auto">
-                    <h2 className="text-[12px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
+                    <h2 className="text-[14px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
                         Portfolio
                     </h2>
                     <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl mb-6 leading-[1.15] tracking-tight drop-shadow-lg">
                         Our Products
                     </h1>
-                    <p className="text-base md:text-xl text-[#D6E9EC] mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+                    <p className="text-lg md:text-xl text-[#D6E9EC] mb-8 leading-relaxed max-w-3xl mx-auto font-light">
                         Browse our comprehensive catalog of medical equipment and consumables sourced from industry-leading manufacturers.
                     </p>
                 </div>
@@ -70,7 +70,7 @@ export default function ProductsPage() {
                                         <cat.icon className="w-6 h-6 text-[#267D91]" />
                                     </div>
                                     <h2 className="text-xl font-bold text-[#0B3D54] mb-3 group-hover:text-[#267D91] transition-colors">{cat.name}</h2>
-                                    <p className="text-[14px] text-[#4A6870] leading-relaxed mb-6 flex-grow">{cat.desc}</p>
+                                    <p className="text-[16px] text-[#4A6870] leading-relaxed mb-6 flex-grow">{cat.desc}</p>
 
                                 </div>
                             </div>

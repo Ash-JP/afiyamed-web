@@ -83,30 +83,30 @@ export default function ContactForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                    <label htmlFor="firstName" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">FIRST NAME <span className="text-red-500">*</span></label>
+                    <label htmlFor="firstName" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">FIRST NAME <span className="text-red-500">*</span></label>
                     <input required type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="Jane" />
                 </div>
                 <div>
-                    <label htmlFor="lastName" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">LAST NAME <span className="text-red-500">*</span></label>
+                    <label htmlFor="lastName" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">LAST NAME <span className="text-red-500">*</span></label>
                     <input required type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="Doe" />
                 </div>
             </div>
             <div>
-                <label htmlFor="company" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">COMPANY / FACILITY NAME</label>
+                <label htmlFor="company" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">COMPANY / FACILITY NAME</label>
                 <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="Medical Care LLC" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                    <label htmlFor="email" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">EMAIL <span className="text-red-500">*</span></label>
+                    <label htmlFor="email" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">EMAIL <span className="text-red-500">*</span></label>
                     <input required type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="jane@example.com" />
                 </div>
                 <div>
-                    <label htmlFor="phone" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">PHONE NUMBER <span className="text-red-500">*</span></label>
+                    <label htmlFor="phone" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">PHONE NUMBER <span className="text-red-500">*</span></label>
                     <input required type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all" placeholder="971 50 307 4484" />
                 </div>
             </div>
             <div>
-                <label htmlFor="subject" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">SUBJECT <span className="text-red-500">*</span></label>
+                <label htmlFor="subject" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">SUBJECT <span className="text-red-500">*</span></label>
                 <select id="subject" name="subject" value={formData.subject} onChange={handleChange} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all text-[#4A6870] appearance-none cursor-pointer">
                     <option value="General Inquiry">General Inquiry</option>
                     <option value="Request a Quote">Request a Quote</option>
@@ -115,13 +115,13 @@ export default function ContactForm() {
                 </select>
             </div>
             <div>
-                <label htmlFor="message" className="block text-[13px] font-bold text-[#0B3D54] mb-2 tracking-wide">MESSAGE <span className="text-red-500">*</span></label>
+                <label htmlFor="message" className="block text-[15px] font-bold text-[#0B3D54] mb-2 tracking-wide">MESSAGE <span className="text-red-500">*</span></label>
                 <textarea required id="message" name="message" value={formData.message} onChange={handleChange} rows={5} className="w-full bg-[#F4FBFC] border border-[#D6E9EC] rounded-xl px-4 py-3.5 focus:bg-white focus:ring-2 focus:ring-[#3AABB8] focus:border-transparent outline-none transition-all resize-none" placeholder="How can we help you today?"></textarea>
             </div>
             <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full flex justify-center items-center bg-gradient-to-r from-[#1D6375] to-[#2A8A9E] hover:from-[#0B3D54] hover:to-[#1D6375] text-white font-bold text-[15px] py-4 rounded-xl transition-all shadow-[0_10px_20px_rgba(42,138,158,0.2)] hover:shadow-[0_15px_30px_rgba(42,138,158,0.3)] hover:-translate-y-1 mt-6 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed group"
+                className="w-full flex justify-center items-center bg-gradient-to-r from-[#1D6375] to-[#2A8A9E] hover:from-[#0B3D54] hover:to-[#1D6375] text-white font-bold text-[17px] py-4 rounded-xl transition-all shadow-[0_10px_20px_rgba(42,138,158,0.2)] hover:shadow-[0_15px_30px_rgba(42,138,158,0.3)] hover:-translate-y-1 mt-6 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed group"
             >
                 {status === "loading" ? (
                     <>

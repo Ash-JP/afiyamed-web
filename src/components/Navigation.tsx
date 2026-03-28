@@ -128,7 +128,7 @@ export function Navigation() {
                                     <Link
                                         key={link.name}
                                         href={link.path}
-                                        className="relative px-4 py-2 text-white/80 hover:text-white text-[15px] font-medium transition-colors group/link"
+                                        className="relative px-4 py-2 text-white/80 hover:text-white text-[17px] font-medium transition-colors group/link"
                                     >
                                         <span className="relative z-10">{link.name}</span>
                                         {/* Hover Pill Effect */}
@@ -179,7 +179,7 @@ export function Navigation() {
                                     key={link.name}
                                     href={link.path}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
                                 >
                                     {link.name}
                                 </Link>

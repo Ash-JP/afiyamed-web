@@ -86,13 +86,13 @@ export default function AboutClient() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h2 className="text-[12px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
+                        <h2 className="text-[14px] font-semibold tracking-[3px] uppercase text-[#A8D8DF] mb-4 drop-shadow-sm">
                             About Us
                         </h2>
                         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl mb-6 leading-[1.15] tracking-tight drop-shadow-lg">
                             Who Are We
                         </h1>
-                        <p className="text-base md:text-xl text-[#D6E9EC] mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+                        <p className="text-lg md:text-xl text-[#D6E9EC] mb-8 leading-relaxed max-w-3xl mx-auto font-light">
                             At Al Afiya Medical Supplies LLC, we operate at the intersection of global medical innovation
                             and regional clinical excellence. Our mission transcends simple distribution; we provide
                             strategic healthcare enablement designed to bolster the medical infrastructure of the UAE and Oman.
@@ -113,7 +113,7 @@ export default function AboutClient() {
                         transition={{ duration: 0.7 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Our Heritage</h2>
+                        <h2 className="text-[12px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Our Heritage</h2>
                         <h3 className="text-3xl md:text-4xl font-serif text-[#0B3D54] max-w-2xl mx-auto leading-tight">
                             Bridging Innovations with Local Needs
                         </h3>
@@ -127,12 +127,12 @@ export default function AboutClient() {
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8 }}
                         >
-                            <p className="text-[15px] text-[#4A6870] leading-relaxed mb-6 font-light">
+                            <p className="text-[17px] text-[#4A6870] leading-relaxed mb-6 font-light">
                                 Founded in 2017, Al Afiya Medical Supplies LLC is a premier healthcare distributor
                                 headquartered in the UAE, with a robust logistics network spanning the United Arab Emirates
                                 and the Sultanate of Oman.
                             </p>
-                            <p className="text-[15px] text-[#4A6870] leading-relaxed font-light">
+                            <p className="text-[17px] text-[#4A6870] leading-relaxed font-light">
                                 Our foundation is built on the belief that premium medical care should be accessible to all.
                                 By bridging the gap between global healthcare innovations and local clinical needs, we ensure
                                 that both providers and patients have access to the tools required for better health outcomes.
@@ -156,8 +156,8 @@ export default function AboutClient() {
                                     <div className="w-10 h-10 bg-gradient-to-br from-[#F4FBFC] to-white rounded-xl flex items-center justify-center mb-4 shadow-sm border border-[#D6E9EC]">
                                         <item.icon className="w-5 h-5 text-[#267D91]" />
                                     </div>
-                                    <h4 className="text-[16px] font-bold text-[#0B3D54] mb-2 group-hover:text-[#267D91] transition-colors">{item.title}</h4>
-                                    <p className="text-[13px] text-[#4A6870] leading-relaxed">{item.desc}</p>
+                                    <h4 className="text-lg font-bold text-[#0B3D54] mb-2 group-hover:text-[#267D91] transition-colors">{item.title}</h4>
+                                    <p className="text-[15px] text-[#4A6870] leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </motion.div>
@@ -183,16 +183,16 @@ export default function AboutClient() {
                         </motion.div>
 
                         <motion.div className="order-1 lg:order-2">
-                            <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4">Leadership Vision</h2>
+                            <h2 className="text-[12px] font-semibold tracking-[2.5px] uppercase text-[#3AABB8] mb-4">Leadership Vision</h2>
                             <h3 className="text-3xl md:text-4xl font-serif text-[#0B3D54] mb-6 leading-tight">Delivering Excellence</h3>
-                            <p className="text-[15px] text-[#4A6870] leading-relaxed mb-8 font-light italic">
+                            <p className="text-[17px] text-[#4A6870] leading-relaxed mb-8 font-light italic">
                                 &quot;At Al Afiya, we are not just a distributor; we are your strategic partner, committed to transparency and world-class clinical standards.&quot;
                             </p>
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 bg-gradient-to-br from-[#1D6375] to-[#267D91] rounded-full flex items-center justify-center text-white font-serif text-lg">AH</div>
                                 <div>
-                                    <p className="font-bold text-[#0B3D54] text-[15px]">Anish Haneefa</p>
-                                    <p className="text-[12px] text-[#4A6870] uppercase tracking-wider">Managing Director</p>
+                                    <p className="font-bold text-[#0B3D54] text-[17px]">Anish Haneefa</p>
+                                    <p className="text-[14px] text-[#4A6870] uppercase tracking-wider">Managing Director</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -228,7 +228,7 @@ export default function AboutClient() {
             <section className="py-20 lg:py-28 bg-white relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div className="text-center mb-20">
-                        <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Milestones</h2>
+                        <h2 className="text-[12px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Milestones</h2>
                         <h3 className="text-3xl md:text-4xl font-serif text-[#0B3D54]">Our Journey</h3>
                         <div className="w-16 h-1 bg-gradient-to-r from-[#3AABB8] to-[#1D6375] mx-auto rounded-full mt-6"></div>
                     </motion.div>
@@ -273,7 +273,7 @@ export default function AboutClient() {
                                         {/* THE BULLETS */}
                                         <ul className="space-y-3">
                                             {item.points.map((point, pIdx) => (
-                                                <li key={pIdx} className="flex items-start gap-3 text-[13px] text-[#4A6870] leading-relaxed">
+                                                <li key={pIdx} className="flex items-start gap-3 text-[15px] text-[#4A6870] leading-relaxed">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-[#2BA8B8] mt-1.5 shrink-0" />
                                                     <span>{point}</span>
                                                 </li>
@@ -291,7 +291,7 @@ export default function AboutClient() {
             <section className="py-20 lg:py-28 bg-[#F0F7F9] relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Structure</h2>
+                        <h2 className="text-[12px] font-semibold tracking-[2.5px] uppercase text-[#2A8A9E] mb-4">Structure</h2>
                         <h3 className="text-3xl md:text-4xl font-serif text-[#0B3D54]">Our Strategic Pillars</h3>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
@@ -307,7 +307,7 @@ export default function AboutClient() {
                                 </div>
                                 <div>
                                     <h4 className="text-[18px] font-bold text-[#0B3D54] mb-3">{pillar.title}</h4>
-                                    <p className="text-[14px] text-[#4A6870] font-light">{pillar.desc}</p>
+                                    <p className="text-[16px] text-[#4A6870] font-light">{pillar.desc}</p>
                                 </div>
                             </div>
                         ))}

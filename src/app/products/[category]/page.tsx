@@ -18,7 +18,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Breadcrumb */}
-                <nav className="flex mb-8 text-sm text-slate-500">
+                <nav className="flex mb-8 text-lg text-slate-500">
                     <Link href="/products" className="hover:text-blue-600">Products</Link>
                     <span className="mx-2">/</span>
                     <span className="text-slate-900 font-medium capitalize">{data.title}</span>
@@ -38,7 +38,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
                             </div>
                             <div className="p-6 flex-grow flex flex-col">
                                 <h3 className="text-lg font-bold text-slate-900 mb-2">Standard Product Title {item}</h3>
-                                <p className="text-sm text-slate-500 mb-4 flex-grow">A brief description of this medical product&apos;s features and specifications for B2B procurement.</p>
+                                <p className="text-lg text-slate-500 mb-4 flex-grow">A brief description of this medical product&apos;s features and specifications for B2B procurement.</p>
                                 <Link href="/contact" className="w-full text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 py-2 rounded font-medium transition-colors">
                                     Inquire Now
                                 </Link>
