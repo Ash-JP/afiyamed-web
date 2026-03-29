@@ -103,7 +103,7 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-luminosity"
           >
-            <source src="/bg-video.mp4" type="video/mp4" />
+            <source src="/backgroundVideo.mp4" type="video/mp4" />
           </video>
           
           {/* Medium gradient overlay to let the video shine through while keeping text readable */}
