@@ -26,19 +26,33 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 export const metadata: Metadata = {
-  metadataBase: new URL('https://alafiyamed.com'), // Replace with your actual production domain
+  metadataBase: new URL('https://alafiyamed.com'),
   title: {
     default: "Al Afiya Medical Supplies LLC",
     template: "%s | Al Afiya Medical"
   },
-  description: "Leading medical equipment and consumables distributor based in the Middle East.",
+  description: "Leading medical equipment and consumables distributor based in the Middle East. Trusted partner in healthcare logistics and supply chain.",
   openGraph: {
     title: "Al Afiya Medical Supplies LLC",
     description: "Leading medical equipment and consumables distributor based in the Middle East.",
     url: 'https://alafiyamed.com',
     siteName: 'Al Afiya Medical',
-    locale: 'en_AE', // UAE locale
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Al Afiya Medical Supplies LLC - Healthcare Logistics',
+      },
+    ],
+    locale: 'en_AE',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Al Afiya Medical Supplies LLC',
+    description: 'Leading medical equipment and consumables distributor based in the Middle East.',
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: '/',
