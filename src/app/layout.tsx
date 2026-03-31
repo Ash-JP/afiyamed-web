@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Al Afiya Medical Supplies LLC',
     description: 'Leading medical equipment and consumables distributor based in the Middle East.',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
   alternates: {
     canonical: '/',
