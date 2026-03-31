@@ -32,13 +32,32 @@ export const metadata: Metadata = {
     template: "%s | Al Afiya Medical"
   },
   description: "Leading medical equipment and consumables distributor based in the Middle East.",
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: "Al Afiya Medical Supplies LLC",
     description: "Leading medical equipment and consumables distributor based in the Middle East.",
     url: 'https://alafiyamed.com',
     siteName: 'Al Afiya Medical',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Al Afiya Medical Supplies LLC',
+      },
+    ],
     locale: 'en_AE', // UAE locale
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Al Afiya Medical Supplies LLC',
+    description: 'Leading medical equipment and consumables distributor based in the Middle East.',
+    images: ['/logo.png'],
   },
   alternates: {
     canonical: '/',
