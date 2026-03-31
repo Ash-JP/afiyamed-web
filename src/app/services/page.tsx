@@ -44,37 +44,66 @@ export default function ServicesPage() {
                             {/* Medical Graph Paper Fade */}
                             <div className="absolute inset-0 bg-[linear-gradient(rgba(58,171,184,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(58,171,184,0.15)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
 
-                            {/* Animated Primary ECG Pulse */}
-                            <svg className="absolute w-full h-full text-[#A8D8DF] animate-[pulseSweep_8s_linear_infinite]" viewBox="0 0 1000 200" fill="none" preserveAspectRatio="none">
-                                <path 
-                                    d="M0,100 L400,100 L410,90 L420,100 L430,100 L435,115 L445,10 L455,160 L465,100 L480,100 L490,80 L505,100 L1000,100"
-                                    stroke="currentColor" 
-                                    strokeWidth="2" 
-                                    strokeLinecap="round" 
-                                    strokeLinejoin="round" 
-                                    className="filter drop-shadow-[0_0_10px_rgba(168,216,223,0.8)]"
-                                />
-                            </svg>
-                            {/* Secondary Phantom Pulse */}
-                            <svg className="absolute w-full h-full text-[#3AABB8] animate-[pulseSweep_12s_linear_infinite_4s] opacity-50" viewBox="0 0 1000 200" fill="none" preserveAspectRatio="none">
-                                <path 
-                                    d="M0,100 L200,100 L210,95 L220,100 L230,100 L235,110 L245,30 L255,130 L265,100 L280,100 L290,85 L300,100 L1000,100"
-                                    stroke="currentColor" 
-                                    strokeWidth="1" 
-                                    strokeLinecap="round" 
-                                    strokeLinejoin="round" 
-                                />
+                            {/* High-Fidelity ECG Scanning Monitor */}
+                            <svg 
+                                className="absolute w-full h-full" 
+                                viewBox="0 0 1000 200" 
+                                fill="none" 
+                                preserveAspectRatio="none"
+                            >
+                                <defs>
+                                    <linearGradient id="scanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stopColor="white" stopOpacity="0" />
+                                        <stop offset="5%" stopColor="white" stopOpacity="0.1" />
+                                        <stop offset="90%" stopColor="white" stopOpacity="1" />
+                                        <stop offset="100%" stopColor="white" stopOpacity="0" />
+                                    </linearGradient>
+                                    <mask id="scanMask">
+                                        <rect width="400" height="200" fill="url(#scanGradient)">
+                                            <animateTransform 
+                                                attributeName="transform" 
+                                                type="translate" 
+                                                from="-400 0" 
+                                                to="1000 0" 
+                                                dur="4s" 
+                                                repeatCount="indefinite" 
+                                            />
+                                        </rect>
+                                    </mask>
+                                </defs>
+
+                                {/* Primary Pulse Layer */}
+                                <g mask="url(#scanMask)">
+                                    <path 
+                                        d="M0,100 L80,100 L90,90 L100,100 L105,115 L115,10 L125,160 L135,100 L150,100 L160,80 L175,100 L280,100 L290,90 L300,100 L305,115 L315,10 L325,160 L335,100 L350,100 L360,80 L375,100 L480,100 L490,90 L500,100 L505,115 L515,10 L525,160 L535,100 L550,100 L560,80 L575,100 L680,100 L690,90 L700,100 L705,115 L715,10 L725,160 L735,100 L750,100 L760,80 L775,100 L880,100 L890,90 L900,100 L905,115 L915,10 L925,160 L935,100 L950,100 L960,80 L975,100 L1000,100"
+                                        stroke="#A8D8DF" 
+                                        strokeWidth="2.5" 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round"
+                                        className="filter drop-shadow-[0_0_8px_rgba(168,216,223,0.8)]"
+                                    />
+                                </g>
+
+                                {/* Secondary Phantom Pulse (Lower Opacity, Offset) */}
+                                <g opacity="0.2" mask="url(#scanMask)">
+                                    <path 
+                                        d="M0,100 L40,100 L50,95 L60,100 L65,110 L75,30 L85,130 L95,100 L110,100 L120,85 L135,100 L240,100 L250,95 L260,100 L265,110 L275,30 L285,130 L295,100 L310,100 L320,85 L335,100 L440,100 L450,95 L460,100 L465,110 L475,30 L485,130 L495,100 L510,100 L520,85 L535,100 L640,100 L650,95 L660,100 L665,110 L675,30 L685,130 L695,100 L710,100 L720,85 L735,100 L840,100 L850,95 L860,100 L865,110 L875,30 L885,130 L895,100 L910,100 L920,85 L935,100 L1000,100"
+                                        stroke="#3AABB8" 
+                                        strokeWidth="1.5" 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round"
+                                    />
+                                </g>
                             </svg>
                         </div>
                     </div>
 
                     <style dangerouslySetInnerHTML={{
                         __html: `
-                        @keyframes pulseSweep {
-                            0% { transform: translateX(50%); opacity: 0; }
-                            10% { opacity: 1; }
-                            90% { opacity: 1; }
-                            100% { transform: translateX(-50%); opacity: 0; }
+                        /* Clean reset of old animations */
+                        @keyframes ecgTravelPulse {
+                            0% { transform: translateX(-100%); opacity: 0; }
+                            100% { transform: translateX(100%); opacity: 0; }
                         }
                         `
                     }} />
