@@ -97,30 +97,58 @@ export function FloatingMolecules() {
 
 // Option 3: DYNAMIC DATA PULSE (ECG / Scanning Lines)
 export function DynamicDataPulse() {
-
-
-    const lines = Array.from({ length: 12 });
+    // Generate a mathematically perfect, repeating EKG/ECG waveform path
+    const segmentWidth = 250;
+    const repeatCount = 10; // Total 2500px width
+    let d = "M0 50 ";
+    for(let i=0; i<repeatCount; i++) {
+        const offset = i * segmentWidth;
+        // Flat, P wave, flat, Q-R-S complex (deep dip, high spike, dip), flat, T wave, flat
+        d += `L${offset + 60} 50 L${offset + 70} 40 L${offset + 80} 50 L${offset + 90} 50 L${offset + 100} 70 L${offset + 110} 10 L${offset + 120} 80 L${offset + 130} 50 L${offset + 160} 50 L${offset + 180} 35 L${offset + 200} 50 L${offset + 250} 50 `;
+    }
 
     return (
-        <div className="absolute inset-0 z-0 overflow-hidden flex flex-col justify-evenly opacity-90 mix-blend-screen scale-110 sm:scale-125 transform -rotate-12 pointer-events-none">
-            {lines.map((_, i) => (
-                <div key={i} className={`relative w-full h-[2px] bg-[#1D6375]/40 ${i % 2 !== 0 ? 'hidden md:block' : 'block'}`}>
-                    <div 
-                        className="absolute top-0 bottom-0 w-[40%] bg-gradient-to-r from-transparent via-[#A8D8DF] to-transparent shadow-[0_0_20px_#A8D8DF] will-change-transform"
+        <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center opacity-80 mix-blend-screen pointer-events-none">
+            
+            {/* Soft monitor grid background */}
+            <div className="absolute inset-0 w-full h-[150vh] bg-[linear-gradient(rgba(29,99,117,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(29,99,117,0.15)_1px,transparent_1px)] bg-[size:40px_40px] z-0"></div>
+
+            <div className="relative w-full max-w-[2500px] h-[350px] flex items-center justify-center z-10 overflow-hidden">
+                {/* Center glowing horizontal basis line */}
+                <div className="absolute w-full h-[1px] bg-[#1D6375]/50 shadow-[0_0_15px_#1D6375]"></div>
+
+                {/* Traveling Heartbeat Trace */}
+                <svg 
+                    className="absolute inset-0 h-[150px] w-full mx-auto will-change-[stroke-dashoffset]" 
+                    viewBox="0 0 2500 100" 
+                    preserveAspectRatio="none"
+                >
+                    <path 
+                        d={d}
+                        fill="none" 
+                        stroke="#3AABB8" 
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="drop-shadow-[0_0_10px_#3AABB8]"
+                        vectorEffect="non-scaling-stroke"
+                        pathLength="100"
+                        strokeDasharray="15 85"
                         style={{
-                            animation: `scanLine 3s ease-in-out infinite`,
-                            animationDelay: `${(i % 4) * 0.8}s`
+                            animation: 'drawEKG 8s linear infinite'
                         }}
                     />
-                </div>
-            ))}
+                </svg>
+            </div>
+
+            {/* Cinematic edge fade */}
+            <div className="absolute inset-0 z-20 w-full h-full bg-gradient-to-r from-[#0B3D54]/90 via-transparent to-[#0B3D54]/90 pointer-events-none"></div>
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                @keyframes scanLine {
-                    0% { left: -40%; opacity: 0; }
-                    50% { opacity: 1; transform: scaleY(3); }
-                    100% { left: 100%; opacity: 0; }
+                @keyframes drawEKG {
+                    0% { stroke-dashoffset: 100; }
+                    100% { stroke-dashoffset: 0; }
                 }
             `}} />
         </div>

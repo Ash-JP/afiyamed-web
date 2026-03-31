@@ -31,7 +31,12 @@ export const metadata: Metadata = {
     default: "Al Afiya Medical Supplies LLC",
     template: "%s | Al Afiya Medical"
   },
-  description: "Leading medical equipment and consumables distributor based in the Middle East. Trusted partner in healthcare logistics and supply chain.",
+  description: "Leading medical equipment and consumables distributor based in the Middle East.",
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: "Al Afiya Medical Supplies LLC",
     description: "Leading medical equipment and consumables distributor based in the Middle East.",

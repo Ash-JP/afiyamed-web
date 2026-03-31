@@ -24,7 +24,7 @@ export async function POST(request: Request) {
             from: 'Contact Form <onboarding@resend.dev>',
 
             // Your receiving email address
-            to: ['info@afiyamed.com8'],
+            to: ['anishkhan403@gmail.com'],
 
             subject: `New Website Inquiry: ${subject}`,
             replyTo: email, // Allows you to hit "reply" directly in your email client
