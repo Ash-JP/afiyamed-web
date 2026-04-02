@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   description: "Leading medical equipment and consumables distributor based in the Middle East.",
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/hero.png',
+    shortcut: '/hero.png',
+    apple: '/hero.png',
   },
   openGraph: {
     title: "Al Afiya Medical Supplies LLC",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: 'Al Afiya Medical',
     images: [
       {
-        url: '/logo.png',
+        url: '/hero.png',
         width: 1200,
         height: 630,
         alt: 'Al Afiya Medical Supplies LLC',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Al Afiya Medical Supplies LLC',
     description: 'Leading medical equipment and consumables distributor based in the Middle East.',
-    images: ['/logo.png'],
+    images: ['/hero.png'],
   },
   alternates: {
     canonical: '/',
@@ -89,7 +89,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
               name: "Al Afiya Medical Supplies LLC",
-              image: "https://alafiyamed.com/logo.png", // Ensure you have a logo.png at root
+              image: "https://alafiyamed.com/hero.png", // Ensure you have a logo.png at root
               description: "Leading B2B and B2C distributor of clinical equipment, laboratory instruments, and everyday surgical consumables in the Middle East.",
               address: {
                 "@type": "PostalAddress",

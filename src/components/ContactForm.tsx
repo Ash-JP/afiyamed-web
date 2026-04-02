@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+// Web3Forms public access key — safe to use in client-side code
+const WEB3FORMS_ACCESS_KEY = "128f761f-6924-49a3-ab7b-9d21d958c1b5";
+
 export default function ContactForm() {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -13,7 +16,6 @@ export default function ContactForm() {
         message: "",
     });
 
-    // UI states
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -24,29 +26,41 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
         setStatus("loading");
         setErrorMessage("");
 
         try {
-            const res = await fetch("/api/contact", {
+            const { firstName, lastName, company, email, phone, subject, message } = formData;
+
+            const plainMessage = `Name: ${firstName} ${lastName}
+Company / Facility: ${company || 'N/A'}
+Email: ${email}
+Phone: ${phone}
+Subject: ${subject}
+
+--- Message ---
+${message}`.trim();
+
+            const data = new FormData();
+            data.append("access_key", WEB3FORMS_ACCESS_KEY);
+            data.append("subject", `New Website Inquiry: ${subject}`);
+            data.append("name", `${firstName} ${lastName}`);
+            data.append("email", email);
+            data.append("message", plainMessage);
+            data.append("botcheck", ""); // honeypot — must stay empty
+
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
+                body: data,
             });
 
-            const data = await res.json();
+            const result = await response.json();
 
-            if (!res.ok) {
-                throw new Error(data.error || "Failed to send message. Please try again.");
+            if (!response.ok || result.success === false) {
+                throw new Error(result.message || "Failed to send message. Please try again.");
             }
 
-            // Success!!
             setStatus("success");
-
-            // Clear the form
             setFormData({
                 firstName: "",
                 lastName: "",
@@ -57,7 +71,6 @@ export default function ContactForm() {
                 message: "",
             });
 
-            // Revert back to idle after 5 seconds automatically
             setTimeout(() => setStatus("idle"), 5000);
 
         } catch (error: unknown) {
