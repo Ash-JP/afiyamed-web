@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-// Web3Forms public access key — safe to use in client-side code
-const WEB3FORMS_ACCESS_KEY = "128f761f-6924-49a3-ab7b-9d21d958c1b5";
+// Web3Forms public access key — loaded from .env.local
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY!;
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
