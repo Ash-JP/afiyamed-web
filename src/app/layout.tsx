@@ -89,7 +89,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
               name: "Al Afiya Medical Supplies LLC",
-              image: "https://alafiyamed.com/hero.png", // Ensure you have a logo.png at root
+              image: "https://alafiyamed.com/logo.png",
               description: "Leading B2B and B2C distributor of clinical equipment, laboratory instruments, and everyday surgical consumables in the Middle East.",
               address: {
                 "@type": "PostalAddress",
