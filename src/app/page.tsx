@@ -8,7 +8,7 @@ import { useRef, useState, useEffect } from "react";
 // Reusable scroll-reveal animation variants
 const sectionReveal: Variants = {
   hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
 };
 
 import {
@@ -26,6 +26,7 @@ import {
   BadgeCheck,
   PhoneCall
 } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 function DraggableMarquee({ children, baseVelocity = -1 }: { children: React.ReactNode, baseVelocity?: number }) {
   const baseX = useMotionValue(0);
@@ -128,10 +129,9 @@ export default function Home() {
                 Critical medical and surgical supplies delivered across the UAE & GCC with unmatched logistics reliability. Empowering facilities of all sizes.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                <Link href="/products" className="group relative overflow-hidden rounded-full p-px shadow-[0_0_30px_rgba(58,171,184,0.3)] hover:shadow-[0_0_40px_rgba(58,171,184,0.5)] transition-all duration-300">
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#A8D8DF] via-[#3AABB8] to-[#1D6375] opacity-70 group-hover:opacity-100 transition-opacity"></span>
-                  <div className="relative bg-[#0B3D54] group-hover:bg-transparent px-8 py-4 rounded-full transition-all duration-300">
-                    <span className="text-white font-semibold text-[17px] flex items-center gap-2">
+                <Link href="/products" className="group relative overflow-hidden rounded-full shadow-[0_0_30px_rgba(58,171,184,0.3)] hover:shadow-[0_0_40px_rgba(58,171,184,0.5)] transition-all duration-300">
+                  <div className="relative bg-[#0B3D54] group-hover:bg-white px-8 py-4 rounded-full transition-all duration-300">
+                    <span className="text-white group-hover:text-[#0B3D54] font-semibold text-[17px] flex items-center gap-2 transition-colors duration-300">
                       Explore Products
                       <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </span>
@@ -450,7 +450,7 @@ export default function Home() {
             Whether outfitting a new surgical wing or ensuring daily consumable flow, let&apos;s architect a solid supply framework together.
           </p>
           <div className="flex justify-center">
-            <Link href="/contact" className="group bg-gradient-to-r from-[#1D6375] to-[#2A8A9E] hover:from-[#0B3D54] hover:to-[#1D6375] text-white px-10 py-5 rounded-full font-bold text-[17px] transition-all shadow-[0_10px_30px_rgba(42,138,158,0.25)] hover:shadow-[0_15px_40px_rgba(42,138,158,0.35)] hover:-translate-y-1 flex items-center gap-3">
+            <Link href="/contact" className="group bg-[#1D6375] text-white px-10 py-5 rounded-full font-bold text-[17px] transition-all duration-300 shadow-[0_10px_30px_rgba(42,138,158,0.25)] hover:shadow-[0_20px_50px_rgba(29,99,117,0.4)] hover:-translate-y-1 flex items-center gap-3">
               Initiate Consultation
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
